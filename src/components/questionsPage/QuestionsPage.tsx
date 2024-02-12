@@ -37,7 +37,9 @@ const QuestionsPage = () => {
                 <img className={styles.illustr} src={illustr} alt="illustration" />
             </div>
             {faqData.map((faq) => (
-                <QuestionCard question={faq.question} answer={faq.answer}/>
+                <div key={faq.question}>
+                    <QuestionCard question={faq.question} answer={faq.answer}/>
+                </div>
             ))}
             {/* <details open={isOpen}>
                 <summary onClick={() => setIsOpen(!isOpen)}>Question</summary>

@@ -36,7 +36,9 @@ const TopRecipesPage = () => {
             <div className={styles.title}>Our Top <span>Recipes</span></div>
             <div className={styles.recipesCardGroup}>
                 {recepies.map((rec) => (
-                    <Recipe imgUrl={rec.imgUrl} category={rec.category} name={rec.name} time={rec.time} rating={rec.rating} />
+                    <div key={rec.imgUrl}>
+                        <Recipe imgUrl={rec.imgUrl} category={rec.category} name={rec.name} time={rec.time} rating={rec.rating} />
+                    </div>
                 ))}
             </div>
             <button className={styles.hideButton}>View All &#10230;</button>

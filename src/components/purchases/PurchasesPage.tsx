@@ -56,7 +56,9 @@ const PurchasesPage = () => {
                     <div className={styles.title}>Control <span>Purchases</span> <br />Via Dashboard</div>
                     <div className={styles.purchasesList}>
                         {purchasesList.map((purchase) => (
-                            <PurchaseCard title={purchase.title} imgUrl={purchase.imgUrl} status={purchase.status} date={purchase.date} />
+                            <div key={purchase.title}>
+                                <PurchaseCard title={purchase.title} imgUrl={purchase.imgUrl} status={purchase.status} date={purchase.date} />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -70,7 +72,9 @@ const PurchasesPage = () => {
                         </div>
                         <div className={styles.purchasesStatList}>
                             {purchasesStatList.map((block) => (
-                                <PurchsesStatBlock title={block.title} changing={block.changing} price={block.price} icon={block.icon} divider={block.divider} />
+                                <div key={block.title}>
+                                    <PurchsesStatBlock title={block.title} changing={block.changing} price={block.price} icon={block.icon} divider={block.divider} />
+                                </div>
                             ))}
                         </div>
                     </div>

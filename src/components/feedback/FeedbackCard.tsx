@@ -45,8 +45,8 @@ const FeedbackCard: React.FC<Props> = ({
       )}
       <div className={styles.quote}>{quote}</div>
       <div className={styles.ratingStars}>
-        {amountStars.map(() => (
-          <img className={styles.star} src={star} alt="star" />
+        {amountStars.map((starNum) => (
+          <img key={starNum} className={styles.star} src={star} alt="star" />
         ))}
       </div>
     </div>
