@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  margin: 103.5px 96px 24.6px;
+}
+
+.imgBlock {
+  width: 50%;
+  position: relative;
+  min-height: 608px;
+}
+
+.illustr01 {
+  position: absolute;
+}
+
+.infoBlock {
+  width: 50%;
+  position: relative;
+  margin: auto 0;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 58.2px;
+  margin-bottom: 63px;
+}
+
+.list {
+  margin-bottom: 61px;
+}
+
+.list li {
+  margin-bottom: 28px;
+}
+
+.curlyArrow {
+  position: absolute;
+  top: 430px;
+  left: 150px;
+}

@@ -1,0 +1,42 @@
+.card {
+    border: 1.5px solid #EDF2F7;
+    border-radius: 19px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftPart {
+    display: flex;
+    column-gap: 18px;
+}
+
+.cardTitle {
+    color: var(--titleColor);
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 150%;
+    letter-spacing: 0.63px;
+}
+
+.cardChanges {
+    color: var(--textColor);
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.63px;
+}
+
+.price {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 150%;
+    letter-spacing: 0.31px;
+}

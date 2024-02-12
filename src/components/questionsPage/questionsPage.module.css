@@ -1,0 +1,22 @@
+.container {
+    margin: 0 96px 190px;
+}
+
+.illustrTitle {
+    position: relative;
+}
+
+.illustr {
+    position: absolute;
+    top: -50px;
+    left: 930px;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+  }
+  
+  @keyframes sweep {
+    0%    {opacity: 0; max-height: 0;}
+    100%  {opacity: 1; max-height: 100%;}
+  }

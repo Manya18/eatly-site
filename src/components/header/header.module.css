@@ -1,0 +1,24 @@
+.header {
+  margin: 48px 96px;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 24.6px;
+}
+
+.nav ul {
+  display: flex;
+  column-gap: 65px;
+  align-items: center;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #606060;
+}
+
+.logo {
+  margin-right: 104px;
+}

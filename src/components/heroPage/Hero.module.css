@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  margin: 0 96px 85px;
+}
+
+.infoBlock {
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.subtitleBlock {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.hr {
+  min-width: 54px;
+}
+
+.subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #201f1f;
+  opacity: 20%;
+}
+
+.title {
+  color: #201f1f;
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.styledSpan {
+  font-weight: 500;
+}
+
+.BtnGroup {
+  display: flex;
+  column-gap: 18px;
+  margin-top: 53px;
+}
+
+.imageBlock {
+  width: 50%;
+  position: relative;
+  min-width: 680px;
+  min-height: 607px;
+}
+
+.ellipseImg {
+  position: absolute;
+  top: 91.5px;
+  left: 129px;
+}
+
+.foodImg {
+  position: absolute;
+  top: 98.5px;
+  left: 104px;
+}
+
+.graphImg {
+  position: absolute;
+  top: 371.5px;
+  left: 29px;
+  border-radius: 17px;
+  box-shadow: 5px 0 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dishCard {
+  position: absolute;
+  top: 35px;
+  left: 309px;
+  border-radius: 17px;
+}
+
+.arrow {
+  position: absolute;
+  top: 141.5px;
+  left: 509px;
+}
+
+.illust1 {
+  position: absolute;
+  top: 0px;
+  left: 690px;
+}
+
+.illust2 {
+  position: absolute;
+  top: 576.5px;
+  left: -5px;
+}

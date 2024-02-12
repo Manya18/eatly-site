@@ -1,0 +1,29 @@
+footer {
+    background-color: #EAEAEA;
+    padding: 40px 96px;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 29px;
+    margin-top: 57px;
+}
+
+.linksGroup {
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+}
+
+.text {
+    color: #999999;
+    font-family: var(--secondaryFont);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contactsGroup {
+    display: flex;
+    column-gap: 53px;
+}

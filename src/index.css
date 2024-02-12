@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --titleColor: #201F1F;
+  --textColor: #676767;
+  --primaryColor: #6C5FBC;
+  --primaryFont: 'Poppins', sans-serif;
+  --secondaryFont: 'Inter', sans-serif;
+  --publicSansFont: 'Public Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: var(--primaryFont);
+  color: var(--titleColor);
+  background-color: #F9F9F9;
+}
+
+hr {
+  border: 1px solid #CBCBCB;
+  margin: 0;
+}
+
+span {
+  color: #5C4EAE;
+}
+
+button {
+  padding: 18px 30px;
+  border-radius: 12.41px;
+  border: none; 
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+.primary__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+
+  font-family: var(--primaryFont);
+  background-color: var(--primaryColor);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.secondary__btn {
+  font-family: var(--primaryFont);
+  background-color: #FFFFFF;
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  font-weight: 500;
+}
+
+.paragraph {
+  color: var(--textColor);
+  font-size: 20px;
+  font-family: var(--secondaryFont);
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.titleSmaller {
+  margin-bottom: 110px;
+  text-align: center;
+  color: var(--titleColor);
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 120%;
 }
