@@ -13,9 +13,6 @@
 .dishInfo {
   display: flex;
   justify-content: space-between;
-}
-
-.dishInfo {
   padding: 11px 32px 17px;
 }
 

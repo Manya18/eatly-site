@@ -1,0 +1,40 @@
+.infoBlock {
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .subtitleBlock {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    column-gap: 20px;
+  }
+  
+  .hr {
+    min-width: 54px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #201f1f;
+    opacity: 20%;
+  }
+  
+  .title {
+    color: #201f1f;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+  .styledSpan {
+    font-weight: 500;
+  }
+  
+  .BtnGroup {
+    display: flex;
+    column-gap: 18px;
+    margin-top: 53px;
+  }

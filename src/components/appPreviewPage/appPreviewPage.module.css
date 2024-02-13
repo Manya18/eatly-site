@@ -30,12 +30,12 @@
   margin-bottom: 61px;
 }
 
-.list li {
-  margin-bottom: 28px;
-}
-
 .curlyArrow {
   position: absolute;
   top: 430px;
   left: 150px;
+}
+
+.hr{
+  margin: 0 96px
 }

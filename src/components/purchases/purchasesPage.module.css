@@ -16,13 +16,11 @@
     font-size: 51px;
     font-weight: 700;
     line-height: 58px;
-    margin-bottom: 48px;
 }
 
-/* .purchasesList {
-    display: flex;
-    flex-direction: column;
-} */
+.purchasesList {
+    margin-top: 48px;
+}
 
 .purchase {
     display: flex;

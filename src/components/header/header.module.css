@@ -7,11 +7,10 @@
   margin-bottom: 24.6px;
 }
 
-.nav ul {
+nav {
   display: flex;
   column-gap: 65px;
   align-items: center;
-  list-style-type: none;
 }
 
 a {

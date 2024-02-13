@@ -15,6 +15,11 @@
     column-gap: 18px;
 }
 
+.textGroup {
+    display: flex;
+    flex-direction: column;
+}
+
 .cardTitle {
     color: var(--titleColor);
     font-family: "Manrope", sans-serif;

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import Header from './components/header/Header';
-import Hero from './components/heroPage/Hero';
+import HeroPage from './components/heroPage/HeroPage';
 import Features from './components/features/Features';
-import DownloadApp from './components/downloadApp/DownloadApp';
-import TopRecipesPage from './components/topRecipes/TopRecipesPage';
+import AppPreviewPage from './components/appPreviewPage/AppPreviewPage';
+import RecipesPage from './components/topRecipes/RecipesPage';
 import PurchasesPage from './components/purchases/PurchasesPage';
-import Feedback from './components/feedback/FeedbackPage';
+import Feedback from './components/feedbackPage/FeedbackPage';
 import QuestionsPage from './components/questionsPage/QuestionsPage';
 import Footer from './components/footer/Footer';
 
@@ -14,10 +14,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
+      <HeroPage />
       <Features />
-      <DownloadApp />
-      <TopRecipesPage />
+      <AppPreviewPage />
+      <RecipesPage />
       <PurchasesPage />
       <Feedback />
       <QuestionsPage />

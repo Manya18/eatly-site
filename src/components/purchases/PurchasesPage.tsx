@@ -9,6 +9,7 @@ import expenseIcon from "../../images/PurchasesPage/expenseIcon.svg"
 import vocherUsageIcon from "../../images/PurchasesPage/vocherUsageIcon.svg"
 import PurchsesStatBlock from "./dashboardBlock/DashboardBlock";
 import PurchaseCard from "./purchaseCard/PurchaseCard";
+import StyledSpan from "../uiComponents/StyledSpan";
 
 const purchasesList = [
     {
@@ -50,17 +51,17 @@ const purchasesStatList = [
 
 const PurchasesPage = () => {
     return ( 
-        <div className={styles.container}>
+        <article className={styles.container}>
             <div className={styles.flexContainer}>
                 <div className={styles.infoBlock}>
-                    <div className={styles.title}>Control <span>Purchases</span> <br />Via Dashboard</div>
-                    <div className={styles.purchasesList}>
+                    <span className={styles.title}>Control <StyledSpan text="Purchases" /> <br />Via Dashboard</span>
+                    <section className={styles.purchasesList}>
                         {purchasesList.map((purchase) => (
                             <div key={purchase.title}>
                                 <PurchaseCard title={purchase.title} imgUrl={purchase.imgUrl} status={purchase.status} date={purchase.date} />
                             </div>
                         ))}
-                    </div>
+                    </section>
                 </div>
                 <div className={styles.statisticsBlock}>
                     <div className={styles.statisticsCard}>
@@ -81,7 +82,7 @@ const PurchasesPage = () => {
                 </div>
             </div>
             <hr />
-        </div>
+        </article>
      );
 }
  

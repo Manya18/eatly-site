@@ -1,7 +1,7 @@
-import styles from "./feedbackPage.module.css";
-import star from "../../images/feedbackImg/Star.svg";
+import styles from "./feedbackCard.module.css";
+import star from "../../../images/feedbackImg/Star.svg";
 
-type Props = {
+interface Props {
   haveHeader: boolean;
   header: {
     avatar: string;
@@ -11,7 +11,7 @@ type Props = {
   };
   quote: string;
   rating: number;
-};
+}
 
 const FeedbackCard: React.FC<Props> = ({
   haveHeader,
@@ -22,34 +22,34 @@ const FeedbackCard: React.FC<Props> = ({
   let amountStars = [0, 1, 2, 3, 4];
 
   return (
-    <div className={styles.feedbackCard}>
+    <article className={styles.feedbackCard}>
       {haveHeader && (
         <div className={styles.cardHeader}>
           <div className={styles.personData}>
             <img
               className={styles.avatar}
               src={header.avatar}
-              alt="personAvatar"
+              alt="person avatar"
             />
             <div className={styles.textGroup}>
-              <div className={styles.personName}>{header.personName}</div>
-              <div className="paragraph">{header.period}</div>
+              <span className={styles.personName}>{header.personName}</span>
+              <span className={styles.period}>{header.period}</span>
             </div>
           </div>
           <img
             className={styles.quoteImg}
             src={header.quoteImg}
-            alt="quoteImage"
+            alt="quotation marks"
           />
         </div>
       )}
-      <div className={styles.quote}>{quote}</div>
+      <span className={styles.quote}>{quote}</span>
       <div className={styles.ratingStars}>
         {amountStars.map((starNum) => (
           <img key={starNum} className={styles.star} src={star} alt="star" />
         ))}
       </div>
-    </div>
+    </article>
   );
 };
 

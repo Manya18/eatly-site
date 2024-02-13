@@ -1,30 +1,25 @@
-import styles from "./purchaseCard.module.css"
+import styles from "./purchaseCard.module.css";
 
 type Props = {
-    title: string,
-    imgUrl: string,
-    status: string,
-    date: string,
-}
+  title: string;
+  imgUrl: string;
+  status: string;
+  date: string;
+};
 
-const PurchaseCard:React.FC<Props> = ({
-    title,
-    imgUrl,
-    status,
-    date,
-}) => {
-    return ( 
-        <div className={styles.purchase}> 
-            <div className={styles.leftPart}>
-                <img src={imgUrl} alt={title} />
-                <div className={styles.textGroup}> 
-                    <div className={styles.purchaseTitle}>{title}</div>
-                    <div className={styles.purchasesStatus}>{status}</div>
-                </div>
-            </div>
-            <div className={styles.date}>{date}</div>
+const PurchaseCard: React.FC<Props> = ({ title, imgUrl, status, date }) => {
+  return (
+    <article className={styles.purchase}>
+      <section className={styles.leftPart}>
+        <img src={imgUrl} alt={title} />
+        <div className={styles.textGroup}>
+          <span className={styles.purchaseTitle}>{title}</span>
+          <span className={styles.purchasesStatus}>{status}</span>
         </div>
-     );
-}
- 
+      </section>
+      <span className={styles.date}>{date}</span>
+    </article>
+  );
+};
+
 export default PurchaseCard;

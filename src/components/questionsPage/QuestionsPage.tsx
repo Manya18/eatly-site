@@ -1,7 +1,7 @@
-import QuestionCard from "./QuestionCard";
+import QuestionCard from "./questionsCard/QuestionCard";
 import styles from "./questionsPage.module.css";
 import illustr from "../../images/questionsPageImg/Illustration01.svg"
-import { useState } from "react";
+import StyledSpan from "../uiComponents/StyledSpan";
 
 const faqData = [
     {
@@ -29,24 +29,17 @@ const faqData = [
 
 const QuestionsPage = () => {
 
-    const [isOpen, setIsOpen] = useState(false)
     return ( 
         <div className={styles.container}>
             <div className={styles.illustrTitle}>
-                <div className='titleSmaller'>Frequently Asked <br/> <span>Questions</span></div>
-                <img className={styles.illustr} src={illustr} alt="illustration" />
+                <div className='titleSmaller'>Frequently Asked <br/> <StyledSpan text="Questions" /> </div>
+                <img className={styles.illustr} src={illustr} alt="decirative element" />
             </div>
             {faqData.map((faq) => (
                 <div key={faq.question}>
                     <QuestionCard question={faq.question} answer={faq.answer}/>
                 </div>
             ))}
-            {/* <details open={isOpen}>
-                <summary onClick={() => setIsOpen(!isOpen)}>Question</summary>
-                <div className={isOpen ? styles.accordionOpen: styles.accordion}>
-                <p>okfeokf spofijseo gjipasfk</p>
-                </div>
-            </details> */}
         </div>
      );
 }

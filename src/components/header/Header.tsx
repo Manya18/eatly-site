@@ -7,15 +7,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <img className={styles.logo} src={logo} alt="logo" />
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <a href="#!">Recipes</a>
-            </li>
-            <li>
-              <a href="#!">Blog</a>
-            </li>
-          </ul>
+        <nav>
+          <a href="#!">Recipes</a>
+          <a href="#!">Blog</a>
         </nav>
       </div>
       <hr />

@@ -9,7 +9,7 @@
 .illustr {
     position: absolute;
     top: -50px;
-    left: 930px;
+    left: 850px;
 }
 
 details[open] summary ~ * {

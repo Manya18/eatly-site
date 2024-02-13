@@ -10,14 +10,14 @@ const Footer = () => {
     <footer>
       <div className={styles.infoRow}>
         <img src={logo} alt="logo" />
-        <div className={styles.linksGroup}>
+        <nav className={styles.linksGroup}>
           <a className={styles.text} href="#!">About Us</a>
           <a className={styles.text} href="#!">Contact</a>
-        </div>
+        </nav>
       </div>
       <hr />
       <div className={styles.infoRow}>
-        <div className={styles.text}>© 2023 EATLY All Rights Reserved.</div>
+        <span className={styles.text}>© 2023 EATLY All Rights Reserved.</span>
         <div className={styles.contactsGroup}>
           <a href="#!"><img src={instagram} alt="instagram" /></a>
           <a href="#!"><img src={linkedIn} alt="linkedIn" /></a>
