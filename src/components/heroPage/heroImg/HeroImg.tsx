@@ -6,7 +6,7 @@ import illust1 from "../../../images/heroImg/Illustration01.svg";
 import illust2 from "../../../images/heroImg/Illustration02.svg";
 import chickenHell from "../../../images/PurchasesPage/chickenHell.svg";
 
-import PurchaseCard from "../../purchases/purchaseCard/PurchaseCard";
+import PurchaseCard from "../../purchasesPage/purchaseCard/PurchaseCard";
 import styles from "./heroImg.module.css";
 
 const HeroImg = () => {
