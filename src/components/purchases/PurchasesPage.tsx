@@ -10,6 +10,7 @@ import vocherUsageIcon from "../../images/PurchasesPage/vocherUsageIcon.svg"
 import PurchsesStatBlock from "./dashboardBlock/DashboardBlock";
 import PurchaseCard from "./purchaseCard/PurchaseCard";
 import StyledSpan from "../uiComponents/StyledSpan";
+import TitleTypeSecondary from "../uiComponents/TitleTypeSecondary";
 
 const purchasesList = [
     {
@@ -54,7 +55,9 @@ const PurchasesPage = () => {
         <article className={styles.container}>
             <div className={styles.flexContainer}>
                 <div className={styles.infoBlock}>
-                    <span className={styles.title}>Control <StyledSpan text="Purchases" /> <br />Via Dashboard</span>
+                    <TitleTypeSecondary>
+                    Control <StyledSpan>Purchases</StyledSpan> <br />Via Dashboard
+                    </TitleTypeSecondary>
                     <section className={styles.purchasesList}>
                         {purchasesList.map((purchase) => (
                             <div key={purchase.title}>

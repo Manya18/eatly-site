@@ -1,5 +1,7 @@
 .container {
     margin: 0 96px 190px;
+    display: flex;
+    flex-direction: column;
 }
 
 .illustrTitle {
@@ -8,8 +10,8 @@
 
 .illustr {
     position: absolute;
-    top: -50px;
-    left: 850px;
+    top: -150px;
+    left: 870px;
 }
 
 details[open] summary ~ * {

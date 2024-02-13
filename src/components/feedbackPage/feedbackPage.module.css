@@ -1,18 +1,15 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 116px 96px 274px;
-}
-
-.title {
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 25.6px;
-  text-align: center;
-  margin-bottom: 80px;
 }
 
 .feedbackCardGroup {
   display: flex;
   column-gap: 40px;
+  margin-top: 80px;
 }
 
 .cardDividerGroup {

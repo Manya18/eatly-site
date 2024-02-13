@@ -5,6 +5,8 @@ import arrow from '../../images/downloadAppImg/Arrow.svg'
 import illustr01 from '../../images/downloadAppImg/Illustration01.svg'
 import curlyArrow from '../../images/downloadAppImg/curlyArrow.svg'
 import StyledSpan from "../uiComponents/StyledSpan";
+import TitleTypeSecondary from "../uiComponents/TitleTypeSecondary";
+import ButtonTypePrimary from "../uiComponents/ButtonTypePrimary";
 
 const AppPreviewPage = () => {
     return ( 
@@ -15,11 +17,11 @@ const AppPreviewPage = () => {
                     <img className={styles.illustr01} src={illustr01} loading="lazy" alt="decorative element" />
                 </figure>
                 <section className={styles.infoBlock}>
-                    <div className={styles.title}>
+                    <TitleTypeSecondary>
                         Premium  
-                        <StyledSpan text=' Quality'/>
+                        <StyledSpan> Quality</StyledSpan>
                         <br /> For Your Health
-                    </div>
+                    </TitleTypeSecondary>
                     <ul className={styles.list}>
                         <li>  
                             <p>Premium quality food is made with ingredients that are packed with essential vitamins, minerals.</p>
@@ -28,10 +30,10 @@ const AppPreviewPage = () => {
                             <p>These foods promote overall wellness by support healthy digestion and boosting immunity</p>
                         </li>
                     </ul>
-                    <button className="primary__btn">
+                    <ButtonTypePrimary>
                         Download
                         <img src={arrow} loading="lazy"alt="arrow" />
-                    </button>
+                    </ButtonTypePrimary>
                     <img className={styles.curlyArrow} src={curlyArrow} loading="lazy" alt="curly arrow" />
                 </section>
             </div>

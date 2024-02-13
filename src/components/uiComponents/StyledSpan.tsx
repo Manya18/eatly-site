@@ -1,11 +1,11 @@
 import styles from "./uiComponents.module.css";
 
-interface Props {
-  text: string;
+interface StyledSpanProps { 
+  children: React.ReactNode;
 }
 
-const styledSpan:React.FC<Props> = (props) => {
-  return <span className={styles.styledSpan}>{props.text}</span>;
+const StyledSpan:React.FC<StyledSpanProps> = (props) => {
+  return <span className={styles.styledSpan}>{props.children}</span>;
 };
 
-export default styledSpan;
+export default StyledSpan;

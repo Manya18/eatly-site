@@ -17,6 +17,7 @@ const featuresData = [
   },
 ];
 
+// здесь, как и во всем проекте используется паттерн "Композиция компонентов" и Компоненты-контейнеры
 const Features: React.FC = () => {
   return (
     <div className={styles.features}>

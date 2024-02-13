@@ -21,7 +21,7 @@ const Recipe: React.FC<Props> = ({ imgUrl, category, name, time, rating }) => {
           <div className={styles.paramsGroup}>
             <span className={styles.param}>{time} •</span>
             <span className={styles.param}>
-              <StyledSpan text="&#9733; " />
+            <StyledSpan>&#9733; </StyledSpan>
               {rating}
             </span>
           </div>

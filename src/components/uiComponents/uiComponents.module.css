@@ -1,3 +1,38 @@
 .styledSpan {
     color: #5C4EAE;
 }
+
+.primaryButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+  
+    font-family: var(--primaryFont);
+    background-color: var(--primaryColor);
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.secondaryButton {
+    font-family: var(--primaryFont);
+    background-color: #FFFFFF;
+    color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    font-weight: 500;
+}
+
+.titlePrimary {
+    color: #201f1f;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.titleSecondary {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 58.2px;
+    text-align: center;
+}

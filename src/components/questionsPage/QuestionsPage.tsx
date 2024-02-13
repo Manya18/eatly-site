@@ -2,6 +2,7 @@ import QuestionCard from "./questionsCard/QuestionCard";
 import styles from "./questionsPage.module.css";
 import illustr from "../../images/questionsPageImg/Illustration01.svg"
 import StyledSpan from "../uiComponents/StyledSpan";
+import TitleTypeSecondary from "../uiComponents/TitleTypeSecondary";
 
 const faqData = [
     {
@@ -31,8 +32,10 @@ const QuestionsPage = () => {
 
     return ( 
         <div className={styles.container}>
+            <TitleTypeSecondary>
+                Frequently Asked <br/> <StyledSpan>Questions</StyledSpan>
+            </TitleTypeSecondary>
             <div className={styles.illustrTitle}>
-                <div className='titleSmaller'>Frequently Asked <br/> <StyledSpan text="Questions" /> </div>
                 <img className={styles.illustr} src={illustr} loading="lazy" alt="decirative element" />
             </div>
             {faqData.map((faq) => (

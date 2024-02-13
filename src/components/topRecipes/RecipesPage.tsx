@@ -5,6 +5,7 @@ import burgerKing from "../../images/recepiesPage/BurgerKing.svg";
 import chickenKing2 from "../../images/recepiesPage/ChickenKing2.svg";
 import Recipe from "./recipeCard/Recipe";
 import StyledSpan from "../uiComponents/StyledSpan";
+import TitleTypeSecondary from "../uiComponents/TitleTypeSecondary";
 
 const recepies = [
   {
@@ -33,9 +34,9 @@ const recepies = [
 const RecipesPage = () => {
   return (
     <article className={styles.container}>
-      <span className={styles.title}>
-        Our Top <StyledSpan text="Recipes" />
-      </span>
+      <TitleTypeSecondary>
+        Our Top <StyledSpan>Recipes</StyledSpan>
+      </TitleTypeSecondary>
       <section className={styles.recipesCardGroup}>
         {recepies.map((rec) => (
           <div key={rec.imgUrl}>

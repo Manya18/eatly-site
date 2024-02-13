@@ -28,26 +28,6 @@ button {
 
 }
 
-.primary__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-
-  font-family: var(--primaryFont);
-  background-color: var(--primaryColor);
-  color: #FFFFFF;
-  font-weight: 500;
-}
-
-.secondary__btn {
-  font-family: var(--primaryFont);
-  background-color: #FFFFFF;
-  color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
-  font-weight: 500;
-}
-
 p {
   color: var(--textColor);
   font-size: 20px;

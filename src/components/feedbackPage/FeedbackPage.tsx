@@ -4,6 +4,7 @@ import quoteChar from "../../images/feedbackImg/QuoteChar.svg";
 import divider from "../../images/feedbackImg/divider.svg";
 import FeedbackCard from "./feedbackCard/FeedbackCard";
 import StyledSpan from "../uiComponents/StyledSpan";
+import TitleTypeSecondary from "../uiComponents/TitleTypeSecondary";
 
 const feedbackData = [
   {
@@ -35,10 +36,9 @@ const feedbackData = [
 const FeedbackPage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <StyledSpan text="Customer " />
-        Say
-      </div>
+      <TitleTypeSecondary> 
+        <StyledSpan>Customer</StyledSpan> Say 
+      </TitleTypeSecondary>
       <div className={styles.feedbackCardGroup}>
         <FeedbackCard
           haveHeader={feedbackData[0].haveHeader}
