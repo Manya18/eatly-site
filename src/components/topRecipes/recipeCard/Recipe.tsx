@@ -13,7 +13,7 @@ interface Props {
 const Recipe: React.FC<Props> = ({ imgUrl, category, name, time, rating }) => {
   return (
     <section className={styles.recipesCard}>
-      <img className={styles.dishImg} src={imgUrl} alt="chicken king" />
+      <img className={styles.dishImg} src={imgUrl} loading="lazy" alt="chicken king" />
       <div className={styles.dishInfo}>
         <div className={styles.visibleInfo}>
           <div className={styles.category}>{category}</div>
@@ -26,7 +26,7 @@ const Recipe: React.FC<Props> = ({ imgUrl, category, name, time, rating }) => {
             </span>
           </div>
         </div>
-        <img className={styles.bookmark} src={bookmark} alt="bookmark" />
+        <img className={styles.bookmark} src={bookmark} loading="lazy" alt="bookmark" />
       </div>
     </section>
   );

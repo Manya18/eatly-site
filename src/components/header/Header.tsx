@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <img className={styles.logo} src={logo} alt="logo" />
+        <img className={styles.logo} src={logo} loading="lazy" alt="logo" />
         <nav>
           <a href="#!">Recipes</a>
           <a href="#!">Blog</a>

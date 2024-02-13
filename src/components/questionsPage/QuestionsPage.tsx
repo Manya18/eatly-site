@@ -33,7 +33,7 @@ const QuestionsPage = () => {
         <div className={styles.container}>
             <div className={styles.illustrTitle}>
                 <div className='titleSmaller'>Frequently Asked <br/> <StyledSpan text="Questions" /> </div>
-                <img className={styles.illustr} src={illustr} alt="decirative element" />
+                <img className={styles.illustr} src={illustr} loading="lazy" alt="decirative element" />
             </div>
             {faqData.map((faq) => (
                 <div key={faq.question}>

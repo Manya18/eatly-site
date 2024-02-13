@@ -53,7 +53,7 @@ const FeedbackPage = () => {
             quote={feedbackData[1].quote}
             rating={feedbackData[1].rating}
           />
-          <img className={styles.divider} src={divider} alt="divider" />
+          <img className={styles.divider} loading="lazy" src={divider} alt="divider" />
         </div>
       </div>
     </div>

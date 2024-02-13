@@ -11,8 +11,8 @@ const AppPreviewPage = () => {
         <article>
             <div className={styles.container}>
                 <figure className={styles.imgBlock}>
-                    <img className={styles.phoneImg} src={phoneScreen} alt="phone screen"/>
-                    <img className={styles.illustr01} src={illustr01} alt="decorative element" />
+                    <img className={styles.phoneImg} src={phoneScreen} loading="lazy" alt="phone screen"/>
+                    <img className={styles.illustr01} src={illustr01} loading="lazy" alt="decorative element" />
                 </figure>
                 <section className={styles.infoBlock}>
                     <div className={styles.title}>
@@ -30,9 +30,9 @@ const AppPreviewPage = () => {
                     </ul>
                     <button className="primary__btn">
                         Download
-                        <img src={arrow} alt="arrow" />
+                        <img src={arrow} loading="lazy"alt="arrow" />
                     </button>
-                    <img className={styles.curlyArrow} src={curlyArrow} alt="curly arrow" />
+                    <img className={styles.curlyArrow} src={curlyArrow} loading="lazy" alt="curly arrow" />
                 </section>
             </div>
             <hr className={styles.hr}/>

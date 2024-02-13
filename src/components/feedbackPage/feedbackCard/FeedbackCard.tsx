@@ -29,6 +29,7 @@ const FeedbackCard: React.FC<Props> = ({
             <img
               className={styles.avatar}
               src={header.avatar}
+              loading="lazy"
               alt="person avatar"
             />
             <div className={styles.textGroup}>
@@ -39,6 +40,7 @@ const FeedbackCard: React.FC<Props> = ({
           <img
             className={styles.quoteImg}
             src={header.quoteImg}
+            loading="lazy"
             alt="quotation marks"
           />
         </div>
@@ -46,7 +48,7 @@ const FeedbackCard: React.FC<Props> = ({
       <span className={styles.quote}>{quote}</span>
       <div className={styles.ratingStars}>
         {amountStars.map((starNum) => (
-          <img key={starNum} className={styles.star} src={star} alt="star" />
+          <img key={starNum} className={styles.star} loading="lazy" src={star} alt="star" />
         ))}
       </div>
     </article>

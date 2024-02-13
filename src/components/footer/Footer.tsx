@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.infoRow}>
-        <img src={logo} alt="logo" />
+        <img src={logo} loading="lazy" alt="logo" />
         <nav className={styles.linksGroup}>
           <a className={styles.text} href="#!">About Us</a>
           <a className={styles.text} href="#!">Contact</a>
@@ -19,10 +19,10 @@ const Footer = () => {
       <div className={styles.infoRow}>
         <span className={styles.text}>© 2023 EATLY All Rights Reserved.</span>
         <div className={styles.contactsGroup}>
-          <a href="#!"><img src={instagram} alt="instagram" /></a>
-          <a href="#!"><img src={linkedIn} alt="linkedIn" /></a>
-          <a href="#!"><img src={facebook} alt="facebook" /></a>
-          <a href="#!"><img src={twitter} alt="twitter" /></a>
+          <a href="#!"><img src={instagram} loading="lazy" alt="instagram" /></a>
+          <a href="#!"><img src={linkedIn} loading="lazy" alt="linkedIn" /></a>
+          <a href="#!"><img src={facebook} loading="lazy" alt="facebook" /></a>
+          <a href="#!"><img src={twitter} loading="lazy" alt="twitter" /></a>
         </div>
       </div>
     </footer>

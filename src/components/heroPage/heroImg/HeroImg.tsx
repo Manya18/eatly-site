@@ -12,11 +12,11 @@ import styles from "./heroImg.module.css";
 const HeroImg = () => {
   return (
     <figure className={styles.imageBlock}>
-      <img className={styles.arrow} src={arrow} alt="curly arrow" />
+      <img className={styles.arrow} src={arrow} loading="lazy" alt="curly arrow" />
       <img
-        className={styles.ellipseImg} src={ellipseImg} alt="violet ellipse" />
-      <img className={styles.foodImg} src={foodImg} alt="plate of food" />
-      <img className={styles.graphImg} src={graphImg} alt="graph" />
+        className={styles.ellipseImg} src={ellipseImg} loading="lazy" alt="violet ellipse" />
+      <img className={styles.foodImg} src={foodImg} loading="lazy" alt="plate of food" />
+      <img className={styles.graphImg} src={graphImg} loading="lazy" alt="graph" />
       <div className={styles.dishCard}>
         <PurchaseCard
           title="Chicken Hell"
@@ -25,8 +25,8 @@ const HeroImg = () => {
           date="3:09 PM"
         />
       </div>
-      <img className={styles.illust1} src={illust1} alt="decorative element" />
-      <img className={styles.illust2} src={illust2} alt="decorative element" />
+      <img className={styles.illust1} src={illust1} loading="lazy" alt="decorative element" />
+      <img className={styles.illust2} src={illust2} loading="lazy" alt="decorative element" />
     </figure>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./feature.module.css";
 
-type Props = {
+interface Props {
   title: string;
   paragraph: string;
 };
