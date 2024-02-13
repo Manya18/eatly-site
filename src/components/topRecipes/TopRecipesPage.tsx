@@ -3,7 +3,7 @@ import styles from "./topRecipes.module.css"
 import chickenKing1 from "../../images/recepiesPage/chickenKing.svg"
 import burgerKing from "../../images/recepiesPage/BurgerKing.svg"
 import chickenKing2 from "../../images/recepiesPage/ChickenKing2.svg"
-import Recipe from "./Recipe";
+import Recipe from "./recipeCard/Recipe";
 
 const recepies = [
     {
