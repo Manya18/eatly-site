@@ -1,0 +1,12 @@
+.features {
+  display: flex;
+  justify-content: center;
+  column-gap: 66px;
+  background-image: url("../../../assets/images/organisms/BG.svg");
+  background-size: cover;
+  padding: 57px 117px 54.7px;
+}
+
+.coloredHr {
+  opacity: 30%;
+}

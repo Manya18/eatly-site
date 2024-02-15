@@ -1,0 +1,7 @@
+.secondaryButton {
+    font-family: var(--primaryFont);
+    background-color: #FFFFFF;
+    color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    font-weight: 500;
+}

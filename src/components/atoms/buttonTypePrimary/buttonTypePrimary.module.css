@@ -1,0 +1,11 @@
+.primaryButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+  
+    font-family: var(--primaryFont);
+    background-color: var(--primaryColor);
+    color: #FFFFFF;
+    font-weight: 500;
+}

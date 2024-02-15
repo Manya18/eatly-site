@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header';
-import HeroPage from './components/heroPage/HeroPage';
-import Features from './components/features/Features';
-import AppPreviewPage from './components/appPreviewPage/AppPreviewPage';
-import RecipesPage from './components/recipesPage/RecipesPage';
-import PurchasesPage from './components/purchasesPage/PurchasesPage';
-import Feedback from './components/feedbackPage/FeedbackPage';
-import QuestionsPage from './components/questionsPage/QuestionsPage';
-import Footer from './components/footer/Footer';
+import Header from './components/organisms/header/Header';
+import Features from './components/organisms/features/Features';
+import AppPreviewPage from './components/organisms/appPreviewScreen/AppPreviewPage';
+import RecipesPage from './components/organisms/recipesScreen/RecipesScreen';
+import PurchasesPage from './components/organisms/purchasesScreen/PurchasesScreen';
+import Feedback from './components/organisms/feedbackScreen/FeedbackScreen';
+import QuestionsPage from './components/organisms/FAQScreen/FAQScreen';
+import Footer from './components/organisms/footer/Footer';
+import HeroScreen from './components/organisms/heroScreen/HeroScreen';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <HeroPage />
+      <HeroScreen />
       <Features />
       <AppPreviewPage />
       <RecipesPage />

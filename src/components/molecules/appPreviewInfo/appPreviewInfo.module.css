@@ -1,0 +1,15 @@
+.infoBlock {
+  width: 50%;
+  position: relative;
+  margin: auto 0;
+}
+
+.list {
+  margin-bottom: 61px;
+}
+
+.curlyArrow {
+  position: absolute;
+  top: 430px;
+  left: 150px;
+}

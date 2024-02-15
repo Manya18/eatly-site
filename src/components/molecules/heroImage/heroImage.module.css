@@ -1,0 +1,52 @@
+.imageBlock {
+    width: 50%;
+    position: relative;
+    min-width: 680px;
+    min-height: 607px;
+  }
+  
+  .ellipseImg {
+    position: absolute;
+    top: 91.5px;
+    left: 129px;
+  }
+  
+  .foodImg {
+    position: absolute;
+    top: 98.5px;
+    left: 104px;
+  }
+  
+  .graphImg {
+    position: absolute;
+    top: 371.5px;
+    left: 29px;
+    border-radius: 17px;
+    box-shadow: 5px 0 10px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dishCard {
+    position: absolute;
+    top: 35px;
+    left: 309px;
+    border-radius: 17px;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 141.5px;
+    left: 509px;
+  }
+  
+  .illust1 {
+    position: absolute;
+    top: 0px;
+    left: 690px;
+  }
+  
+  .illust2 {
+    position: absolute;
+    top: 576.5px;
+    left: -5px;
+  }
+  

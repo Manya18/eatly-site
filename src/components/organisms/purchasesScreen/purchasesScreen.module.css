@@ -1,0 +1,12 @@
+.container {
+    margin: 0 96px 85px;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 138px;
+}
+
+
+

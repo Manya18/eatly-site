@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  margin-bottom: 24.6px;
+}
+
+.navigation {
+    display: flex;
+    column-gap: 65px;
+    align-items: center;
+  }

@@ -1,0 +1,9 @@
+.imgBlock {
+  width: 50%;
+  position: relative;
+  min-height: 608px;
+}
+
+.decorElem3 {
+  position: absolute;
+}

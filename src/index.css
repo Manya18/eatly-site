@@ -26,11 +26,3 @@ button {
   font-size: 16px;
   font-weight: 500;
 }
-
-p {
-  color: var(--textColor);
-  font-size: 20px;
-  font-family: var(--secondaryFont);
-  line-height: 28px;
-  font-weight: 400;
-}
