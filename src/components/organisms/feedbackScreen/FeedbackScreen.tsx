@@ -3,6 +3,7 @@ import divider from "../../../assets/images/organisms/divider.svg";
 import FeedbackCard from "../../molecules/feedbackCard/FeedbackCard";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
+import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 
 const feedbackData = [
   {
@@ -18,7 +19,7 @@ const feedbackData = [
 
 const FeedbackPage = () => {
   return (
-    <div className={styles.container}>
+    <ColumnTemplate>
       <TitleTypeSecondary> 
         <StyledSpan>Customer</StyledSpan> Say 
       </TitleTypeSecondary>
@@ -34,7 +35,7 @@ const FeedbackPage = () => {
           <img className={styles.divider} loading="lazy" src={divider} alt="divider" />
         </div>
       </div>
-    </div>
+    </ColumnTemplate>
   );
 };
 

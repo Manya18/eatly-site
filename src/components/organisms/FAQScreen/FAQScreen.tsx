@@ -3,6 +3,7 @@ import styles from "./FAQScreen.module.css";
 import decorElem4 from "../../../assets/images/organisms/decorElem4.svg"
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
+import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 
 const faqData = [
     {
@@ -31,7 +32,7 @@ const faqData = [
 const QuestionsPage = () => {
 
     return ( 
-        <div className={styles.container}>
+        <ColumnTemplate>
             <TitleTypeSecondary>
                 Frequently Asked <br/> <StyledSpan>Questions</StyledSpan>
             </TitleTypeSecondary>
@@ -43,7 +44,7 @@ const QuestionsPage = () => {
                     <QuestionCard question={faq.question} answer={faq.answer}/>
                 </div>
             ))}
-        </div>
+        </ColumnTemplate>
      );
 }
  

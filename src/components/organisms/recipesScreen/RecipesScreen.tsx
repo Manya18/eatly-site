@@ -7,6 +7,8 @@ import Recipe from "../../molecules/recipeCard/Recipe";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
 import ButtonTypeHidden from "../../atoms/buttonTypeHidden/ButtonTypeHidden";
+import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
+import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 
 const recepies = [
   {
@@ -34,27 +36,29 @@ const recepies = [
 
 const RecipesPage = () => {
   return (
-    <article className={styles.container}>
-      <TitleTypeSecondary>
-        Our Top <StyledSpan>Lunch</StyledSpan>
-      </TitleTypeSecondary>
-      <section className={styles.recipesCardGroup}>
-        {recepies.map((rec) => (
-          <div key={rec.imgUrl}>
-            <Recipe
-              imgUrl={rec.imgUrl}
-              category={rec.category}
-              name={rec.name}
-              time={rec.time}
-              rating={rec.rating}
-            />
-          </div>
-        ))}
-      </section>
-      <ButtonTypeHidden onClick={() => console.log()}>
-        View All &#10230;
-      </ButtonTypeHidden>
-      <hr />
+    <article>
+      <ColumnTemplate>
+        <TitleTypeSecondary>
+          Our Top <StyledSpan>Lunch</StyledSpan>
+        </TitleTypeSecondary>
+        <section className={styles.recipesCardGroup}>
+          {recepies.map((rec) => (
+            <div key={rec.imgUrl}>
+              <Recipe
+                imgUrl={rec.imgUrl}
+                category={rec.category}
+                name={rec.name}
+                time={rec.time}
+                rating={rec.rating}
+              />
+            </div>
+          ))}
+        </section>
+        <ButtonTypeHidden onClick={() => console.log()}>
+          View All &#10230;
+        </ButtonTypeHidden>
+      </ColumnTemplate>
+      <HrTypeStyled />
     </article>
   );
 };

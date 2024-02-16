@@ -6,7 +6,7 @@ import ContactsGroup from "../../molecules/contactsGroup/ContactsGroup";
 const Footer = () => {
   return (
     <footer>
-      <Menu />
+      <Menu containerStyle={styles.flexContainer}/>
       <hr />
       <div className={styles.infoRow}>
         <span className={styles.text}>© 2023 EATLY All Rights Reserved.</span>

@@ -1,18 +1,19 @@
 import React from "react";
-import styles from './appPreviewPage.module.css'
 import AppPreviewImg from "../../molecules/appPreviewImg/AppPreviewImg";
 import AppPreviewInfo from "../../molecules/appPreviewInfo/AppPreviewInfo";
+import FlexTemplate from "../../templates/rowTemplate/RowTemplate";
+import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 
 const AppPreviewPage = () => {
-    return ( 
-        <article>
-            <div className={styles.container}>
-                <AppPreviewImg />
-                <AppPreviewInfo />
-            </div>
-            <hr className={styles.hr}/>
-        </article>
-     );
-}
- 
+  return (
+    <section>
+      <FlexTemplate>
+        <AppPreviewImg />
+        <AppPreviewInfo />
+      </FlexTemplate>
+      <HrTypeStyled />
+    </section>
+  );
+};
+
 export default AppPreviewPage;
