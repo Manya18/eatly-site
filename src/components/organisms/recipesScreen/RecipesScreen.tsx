@@ -36,7 +36,7 @@ const recepies = [
 
 const RecipesPage = () => {
   return (
-    <article>
+    <article id="recipes">
       <ColumnTemplate>
         <TitleTypeSecondary>
           Our Top <StyledSpan>Lunch</StyledSpan>
@@ -54,9 +54,6 @@ const RecipesPage = () => {
             </div>
           ))}
         </section>
-        <ButtonTypeHidden onClick={() => console.log()}>
-          View All &#10230;
-        </ButtonTypeHidden>
       </ColumnTemplate>
       <HrTypeStyled />
     </article>

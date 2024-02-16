@@ -33,9 +33,11 @@ const QuestionsPage = () => {
 
     return ( 
         <ColumnTemplate>
+        <div id="FAQ">
             <TitleTypeSecondary>
                 Frequently Asked <br/> <StyledSpan>Questions</StyledSpan>
             </TitleTypeSecondary>
+            </div>
             <div className={styles.titleForDecorElem}>
                 <img className={styles.decorElem} src={decorElem4} loading="lazy" alt="decirative element" />
             </div>
