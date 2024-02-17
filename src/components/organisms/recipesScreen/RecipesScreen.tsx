@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./recipesScreen.module.css";
 import chickenKing1 from "../../../assets/images/organisms/ChickenKing.svg";
 import burgerKing from "../../../assets/images/organisms/BurgerKing.svg";
@@ -6,7 +6,6 @@ import chickenKing2 from "../../../assets/images/organisms/ChickenKing2.svg";
 import Recipe from "../../molecules/recipeCard/Recipe";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
-import ButtonTypeHidden from "../../atoms/buttonTypeHidden/ButtonTypeHidden";
 import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 
@@ -35,6 +34,29 @@ const recepies = [
 ];
 
 const RecipesPage = () => {
+
+
+  const takeThreeTopLunches = (lanches: any) => {
+    const recipes = lanches.recipes;
+    let threeTopLunches = []
+    recipes.sort((a: any, b: any) => b.rating - a.rating);
+
+    console.log('recipes', recipes)
+    threeTopLunches = recipes.slice(0, 3);
+    console.log('threeTopLunches', threeTopLunches)
+    return threeTopLunches;
+  }
+
+  useEffect(() => {
+    const fetchLunch = async () => {
+      const responce = await fetch("https://dummyjson.com/recipes/meal-type/Lunch");
+      const lunches = (await responce.json());
+      takeThreeTopLunches(lunches)
+    };
+
+    fetchLunch();
+  }, []);
+
   return (
     <article id="recipes">
       <ColumnTemplate>

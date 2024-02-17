@@ -7,10 +7,10 @@ import { RecipeProps } from "../../../types/RecipeProps";
 const Recipe = ({ imgUrl, category, name, time, rating }: React.PropsWithChildren<RecipeProps>) => {
   return (
     <section className={styles.recipesCard}>
-      <img className={styles.dishImg} src={imgUrl} loading="lazy" alt="chicken king" />
+      <img className={styles.dishImg} src={imgUrl} loading="lazy" alt={name} />
       <div className={styles.dishInfo}>
         <div className={styles.visibleInfo}>
-          <span className={styles.category}>{category}</span>
+          <div className={styles.category}>{category}</div>
           <h3 className={styles.dishName}>{name}</h3>
           <div className={styles.paramsGroup}>
             <span className={styles.param}>{time} •</span>

@@ -16,6 +16,10 @@
   padding: 11px 32px 17px;
 }
 
+.visibleInfo {
+  text-align: left;
+}
+
 .category {
   display: inline;
   background-color: #f7edd0;
