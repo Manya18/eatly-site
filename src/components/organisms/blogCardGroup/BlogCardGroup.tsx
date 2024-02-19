@@ -13,23 +13,12 @@ const data: PostProps = {
 };
 
 const BlogCardGroup = ({ data }: { data: PostProps[] }) => {
-  // const [posts, setPosts] = useState<PostProps[]>([data]);
-  // useEffect(() => {
-  //   const fetchComments = async () => {
-  //     const responce = await fetch("https://dummyjson.com/posts?limit=12&skip=10");
-  //     const posts = await responce.json();
-  //     setPosts(posts.posts);
-  //   };
-
-  //   fetchComments();
-  // }, []);
 
   return (
     <div className={styles.container}>
       {data.map((post) => (
         <BlogCard data={post} />
       ))}
-
     </div>
   );
 };

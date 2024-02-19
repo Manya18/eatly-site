@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PostProps } from "../../../types/APItypes/PostProps";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./blogCard.module.css";
@@ -32,7 +33,7 @@ const BlogCard = ({ data }: { data: PostProps }) => {
   };
 
   return (
-    <section id={data.id.toString()} className={styles.card}>
+    <Link to={`../article/${data.id}`} id={data.id.toString()} className={styles.card}>
       <div className={styles.title}>{data.title}</div>
       <div className={styles.addons}>
         <div className={styles.tags}>
@@ -45,7 +46,7 @@ const BlogCard = ({ data }: { data: PostProps }) => {
         </span>
       </div>
       <p className={styles.body}>{truncateText()}</p>
-    </section>
+    </Link>
   );
 };
 

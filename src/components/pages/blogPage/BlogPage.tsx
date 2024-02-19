@@ -24,19 +24,6 @@ const data: PostProps[] = [
   },
 ];
 
-type PaginationProps = {
-  onNextPageClick: () => void;
-  onPrevPageClick: () => void;
-  disable: {
-    left: boolean;
-    right: boolean;
-  };
-  nav?: {
-    current: number;
-    total: number;
-  };
-};
-
 const BlogPage = () => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(0);
@@ -44,7 +31,7 @@ const BlogPage = () => {
   const [posts, setPosts] = useState<PostProps[]>(data);
   const fetchComments = async () => {
     const responce = await fetch(
-      `https://dummyjson.com/posts?limit=12&skip=${page * 12}`
+      `https://dummyjson.com/posts?limit=12&skip=${page * POSTS_ON_PAGE}`
     );
     const posts = await responce.json();
     setLimit(posts.total);
@@ -76,7 +63,7 @@ const BlogPage = () => {
         <div className={styles.buttonGroup}>
           {page <= 0 ? (
             <ButtonTypeHidden onClick={openBackPage} disabled={true}>
-              <img src={DisableArrow} alt="Back Arrow" loading="lazy" />:
+              <img src={DisableArrow} alt="Back Arrow" loading="lazy" />
             </ButtonTypeHidden>
           ) : (
             <ButtonTypeHidden onClick={openBackPage}>

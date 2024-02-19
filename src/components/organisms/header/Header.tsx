@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./header.module.css";
-import Menu from "../../molecules/menu/Menu";
+import Menu from "../../molecules/NavMenu/Menu";
 import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 
 const Header = () => {

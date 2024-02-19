@@ -6,6 +6,7 @@ import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondar
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import { useEffect, useState } from "react";
 import { CommentsProps } from "../../../types/APItypes/CommentsProps";
+import FeedbackCarusel from "../feedbackCarusel/FeedbackCarusel";
 
 const feedbackData = [
   {
@@ -61,21 +62,7 @@ const FeedbackPage = () => {
       <TitleTypeSecondary>
         <StyledSpan>Customer</StyledSpan> Say
       </TitleTypeSecondary>
-      <div className={styles.feedbackCardGroup}>
-        <FeedbackCard
-          personName={feedbackData[0].user.username}
-          quote={feedbackData[0].body}
-        />
-        <div className={styles.cardDividerGroup}>
-          <FeedbackCard quote={feedbackData[1].body} />
-          <img
-            className={styles.divider}
-            loading="lazy"
-            src={divider}
-            alt="divider"
-          />
-        </div>
-      </div>
+      <FeedbackCarusel />
     </ColumnTemplate>
   );
 };

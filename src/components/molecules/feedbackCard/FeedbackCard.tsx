@@ -5,12 +5,13 @@ import quoteImg from "../../../assets/images/molecules/QuoteChar.svg";
 const FeedbackCard = ({
   personName,
   quote,
+  id
 }: React.PropsWithChildren<FeedbackProps>) => {
   return (
-    <section className={styles.feedbackCard}>
+    <section key={id} className={styles.feedbackCard}>
       {personName && (
         <div className={styles.cardHeader}>
-          <span className={styles.personName}>{personName}</span>
+          <span className={styles.personName}>@{personName}</span>
           <img
             className={styles.quoteImg}
             src={quoteImg}

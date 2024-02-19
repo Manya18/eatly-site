@@ -1,5 +1,5 @@
 .purchase {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     padding: 4px 17px;
     margin-bottom: 15px;
@@ -7,7 +7,7 @@
     border-radius: 12px;
     box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.1);
     width: max-content;
-    min-width: 345px;
+    min-width: 330px;
 }
 
 .leftPart {

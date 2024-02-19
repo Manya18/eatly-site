@@ -1,6 +1,6 @@
 import styles from "./footer.module.css";
 
-import Menu from "../../molecules/menu/Menu";
+import Menu from "../../molecules/NavMenu/Menu";
 import ContactsGroup from "../../molecules/contactsGroup/ContactsGroup";
 import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 
