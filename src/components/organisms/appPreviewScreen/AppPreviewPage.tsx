@@ -11,7 +11,7 @@ const AppPreviewPage = () => {
         <AppPreviewImg />
         <AppPreviewInfo />
       </FlexTemplate>
-      <HrTypeStyled />
+      <HrTypeStyled needMargin={true}/>
     </section>
   );
 };

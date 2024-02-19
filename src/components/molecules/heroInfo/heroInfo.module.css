@@ -7,6 +7,8 @@
 
 .hr {
   min-width: 54px;
+  border: 1px solid #CBCBCB;
+  margin: 0;
 }
 
 .subtitle {

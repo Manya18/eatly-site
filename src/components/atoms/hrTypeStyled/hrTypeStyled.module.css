@@ -1,4 +1,7 @@
 .hr {
-  border: 1px solid #cbcbcb;
+  border: 1px solid #CBCBCB;
+}
+
+.margin {
   margin: 0 96px;
 }

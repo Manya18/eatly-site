@@ -1,5 +1,6 @@
 import { FAQProps } from "../../../types/FAQProps";
 import ButtonTypeOpen from "../../atoms/buttonTypeOpen/ButtonTypeOpen";
+import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 import styles from "./FAQCard.module.css";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ const FAQCard = ( {question, answer} : React.PropsWithChildren<FAQProps>) => {
         )}
       </div>
       {isOpen && <p className={styles.answer}>{answer}</p>}
-      <hr />
+      <HrTypeStyled />
     </section>
   );
 };

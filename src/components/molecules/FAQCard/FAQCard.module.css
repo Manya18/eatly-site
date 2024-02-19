@@ -30,6 +30,11 @@
   animation: slideDown 0.5s ease;
 }
 
+.hr {
+  border: 1px solid #CBCBCB;
+  margin: 0;
+}
+
 @keyframes slideDown {
   from {
     transform: translateY(-30px);

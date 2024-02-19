@@ -4,4 +4,5 @@ export interface PostProps {
   tags: string[];
   reactions: number;
   body: string;
+  userId: number;
 }

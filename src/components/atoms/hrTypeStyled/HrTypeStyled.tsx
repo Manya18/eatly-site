@@ -1,8 +1,14 @@
 import styles from "./hrTypeStyled.module.css"
 
-const HrTypeStyled = () => {
+interface hrProps {
+    needMargin?: boolean
+}
+
+const HrTypeStyled : React.FC<hrProps> = ( {needMargin}) => {
     return ( 
-        <hr className={styles.hr} />
+        <div>
+        {needMargin ? <hr className={`${styles.margin} ${styles.hr}`} /> : <hr className={styles.hr} />}
+        </div>
      );
 }
  

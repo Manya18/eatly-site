@@ -14,7 +14,7 @@ const BlogCard = ({ data }: { data: PostProps }) => {
     for (let word of words) {
       if (currentLines < 3) {
         count += (" " + word).length;
-        if (count <= 35) {
+        if (count <= 32) {
           truncatedText += " " + word;
         } else {
           currentLines++;
@@ -24,7 +24,7 @@ const BlogCard = ({ data }: { data: PostProps }) => {
       } else break;
     }
     truncatedText = truncatedText.trim();
-    if ((truncatedText + "...").length >= 110) {
+    if ((truncatedText + "...").length >= 100) {
       truncatedText.slice(0, truncatedText.lastIndexOf(" "));
       truncatedText += "...";
     }

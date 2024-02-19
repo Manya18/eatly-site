@@ -5,6 +5,7 @@ import ArticlePage from "./components/pages/articlePage/ArticlePage";
 import BlogPage from "./components/pages/blogPage/BlogPage";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>

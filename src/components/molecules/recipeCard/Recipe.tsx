@@ -13,7 +13,7 @@ const Recipe = ({ imgUrl, category, name, time, rating }: React.PropsWithChildre
           <div className={styles.category}>{category}</div>
           <h3 className={styles.dishName}>{name}</h3>
           <div className={styles.paramsGroup}>
-            <span className={styles.param}>{time} •</span>
+            <span className={styles.param}>{time} min •</span>
             <span className={styles.param}>
             <StyledSpan>&#9733; </StyledSpan>
               {rating}

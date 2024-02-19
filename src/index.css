@@ -13,16 +13,3 @@ body {
   color: var(--titleColor);
   background-color: #F9F9F9;
 }
-
-hr {
-  border: 1px solid #CBCBCB;
-  margin: 0;
-}
-
-button {
-  padding: 18px 30px;
-  border-radius: 12.41px;
-  border: none; 
-  font-size: 16px;
-  font-weight: 500;
-}

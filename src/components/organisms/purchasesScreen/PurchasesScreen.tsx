@@ -11,7 +11,7 @@ const PurchasesPage = () => {
         <PurchasesInfo />
         <PurchasesDashboard />
       </FlexTemplate>
-      <HrTypeStyled />
+      <HrTypeStyled needMargin={true} />
     </section>
   );
 };

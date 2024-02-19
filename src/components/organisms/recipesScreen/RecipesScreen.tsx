@@ -1,57 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./recipesScreen.module.css";
 import chickenKing1 from "../../../assets/images/organisms/ChickenKing.svg";
-import burgerKing from "../../../assets/images/organisms/BurgerKing.svg";
-import chickenKing2 from "../../../assets/images/organisms/ChickenKing2.svg";
 import Recipe from "../../molecules/recipeCard/Recipe";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
 import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
-
-const recepies = [
-  {
-    imgUrl: chickenKing1,
-    category: "Pizza",
-    name: "The Chicken King",
-    time: "24min",
-    rating: "4.8",
-  },
-  {
-    imgUrl: burgerKing,
-    category: "Pizza",
-    name: "The Burger King",
-    time: "24min",
-    rating: "4.9",
-  },
-  {
-    imgUrl: chickenKing2,
-    category: "Pizza",
-    name: "The Chicken King",
-    time: "24min",
-    rating: "4.8",
-  },
-];
+import { RecipesProps } from "../../../types/APItypes/RecipesProps";
 
 const RecipesPage = () => {
-
+  const [recipes, setRecipes] = useState<RecipesProps>({
+    recipes: [
+      {
+        caloriesPerServing: 0,
+        cookTimeMinutes: 0,
+        cuisine: "",
+        difficulty: "",
+        id: 0,
+        image: "",
+        ingredients: [""],
+        instructions: [""],
+        mealType: [""],
+        name: "",
+        prepTimeMinutes: 0,
+        rating: 0,
+        reviewCount: 0,
+        servings: 0,
+        tags: [""],
+        userId: 0,
+      },
+    ],
+  });
 
   const takeThreeTopLunches = (lanches: any) => {
     const recipes = lanches.recipes;
-    let threeTopLunches = []
+    let threeTopLunches = [];
     recipes.sort((a: any, b: any) => b.rating - a.rating);
 
-    console.log('recipes', recipes)
     threeTopLunches = recipes.slice(0, 3);
-    console.log('threeTopLunches', threeTopLunches)
     return threeTopLunches;
-  }
+  };
 
   useEffect(() => {
     const fetchLunch = async () => {
-      const responce = await fetch("https://dummyjson.com/recipes/meal-type/Lunch");
-      const lunches = (await responce.json());
-      takeThreeTopLunches(lunches)
+      const responce = await fetch(
+        "https://dummyjson.com/recipes/meal-type/Lunch"
+      );
+      const lunches = await responce.json();
+      setRecipes({recipes: takeThreeTopLunches(lunches)});
     };
 
     fetchLunch();
@@ -64,20 +60,20 @@ const RecipesPage = () => {
           Our Top <StyledSpan>Lunch</StyledSpan>
         </TitleTypeSecondary>
         <section className={styles.recipesCardGroup}>
-          {recepies.map((rec) => (
-            <div key={rec.imgUrl}>
+          {recipes.recipes.map((rec) => (
+            <div key={rec.image}>
               <Recipe
-                imgUrl={rec.imgUrl}
-                category={rec.category}
+                imgUrl={rec.image}
+                category={rec.mealType[0]}
                 name={rec.name}
-                time={rec.time}
-                rating={rec.rating}
+                time={rec.cookTimeMinutes.toString()}
+                rating={rec.rating.toString()}
               />
             </div>
           ))}
         </section>
       </ColumnTemplate>
-      <HrTypeStyled />
+      <HrTypeStyled needMargin={true}/>
     </article>
   );
 };

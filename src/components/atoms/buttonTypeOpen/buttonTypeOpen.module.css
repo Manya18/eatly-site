@@ -1,14 +1,15 @@
 .buttonTypeOpen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 15px;
-  
-    font-family: var(--primaryFont);
-    background-color: var(--primaryColor);
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 20px;
-    border-radius: 50%;
-    padding: 1px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+
+  font-family: var(--primaryFont);
+  background-color: var(--primaryColor);
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  padding: 1px 10px;
 }

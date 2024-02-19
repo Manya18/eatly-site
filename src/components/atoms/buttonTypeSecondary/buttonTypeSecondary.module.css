@@ -1,7 +1,12 @@
 .secondaryButton {
-    font-family: var(--primaryFont);
-    background-color: #FFFFFF;
-    color: var(--primaryColor);
-    border: 2px solid var(--primaryColor);
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-family: var(--primaryFont);
+  background-color: #ffffff;
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  border-radius: 12.41px;
+  padding: 18px 30px;
+  font-size: 16px;
+  font-weight: 500;
 }
