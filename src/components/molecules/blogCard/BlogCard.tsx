@@ -33,7 +33,7 @@ const BlogCard = ({ data }: { data: IPostProps }) => {
   };
 
   return (
-    <Link to={`../article/${data.id}`} id={data.id.toString()} className={styles.card}>
+    <Link to={`../article/${data.id}`} key={data.id.toString()} className={styles.card}>
       <div className={styles.title}>{data.title}</div>
       <div className={styles.addons}>
         <div className={styles.tags}>

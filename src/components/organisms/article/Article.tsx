@@ -41,7 +41,7 @@ const Article = () => {
     };
 
     fetchComments();
-  });
+  }, []);
 
   return (
     <div key={articleInfo.id} className={styles.article}>

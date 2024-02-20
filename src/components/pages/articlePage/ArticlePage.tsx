@@ -33,7 +33,7 @@ const ArticlePage = () => {
     };
 
     fetchComments();
-  });
+  }, []);
 
   return (
     <Layout>

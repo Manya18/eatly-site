@@ -39,7 +39,7 @@ const BlogPage = () => {
   };
   useEffect(() => {
     fetchComments();
-  });
+  }, []);
 
   const openBackPage = () => {
     setPage(page - 1);
