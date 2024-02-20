@@ -4,33 +4,12 @@ import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./blogCard.module.css";
 
 const BlogCard = ({ postData }: { postData: IPostProps }) => {
-  // обрезаем первые 3 строки
-  const truncateText = (body: string) => {
-    const words = body.split(" ");
-    let truncatedText = words[0];
-    words.shift();
-    let currentLines = 0;
-    let count = 0;
 
-    for (let word of words) {
-      if (currentLines < 3) {
-        count += (" " + word).length;
-        if (count <= 32) {
-          truncatedText += " " + word;
-        } else {
-          currentLines++;
-          count = 0;
-          if (currentLines < 3) truncatedText += " " + word;
-        }
-      } else break;
-    }
-    truncatedText = truncatedText.trim();
-    if ((truncatedText + "...").length >= 100) {
-      truncatedText.slice(0, truncatedText.lastIndexOf(" "));
-      truncatedText += "...";
-    }
-    return truncatedText;
-  };
+  const lenght = 36 * 3 - 3;
+  let text = postData.body
+  text = text.slice(0, lenght);
+  text = text.slice(0, text.lastIndexOf(" "));
+  text += "..."
 
   return (
     <Link
@@ -49,7 +28,7 @@ const BlogCard = ({ postData }: { postData: IPostProps }) => {
           {postData.reactions.toString()} <StyledSpan>&#9733;</StyledSpan>
         </span>
       </div>
-      <p className={styles.body}>{truncateText(postData.body)}</p>
+      <p className={styles.body}>{text}</p>
     </Link>
   );
 };

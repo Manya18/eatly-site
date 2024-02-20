@@ -2,10 +2,7 @@ import arrow from "../../../assets/images/molecules/arrow-right.svg";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {
-  useGetAuthorQuery,
-  useGetSinglePostQuery,
-} from "../../../redux/features/api/fetch.api";
+import { useGetAuthorQuery, useGetSinglePostQuery } from "../../../redux/features/api/fetch.api";
 import styles from "./post.module.css";
 
 const Article = () => {
@@ -15,7 +12,7 @@ const Article = () => {
   const { data: authorInfo } = useGetAuthorQuery(id);
 
   return (
-    <div key={articleInfo?.id} className={styles.article}>
+    <article key={articleInfo?.id} className={styles.article}>
       <div className={styles.title}>{articleInfo?.title}</div>
       <div className={styles.infoGroup}>
         <div className={styles.authorCard}>
@@ -49,7 +46,7 @@ const Article = () => {
         <img src={arrow} alt="back" />
         <label>All Articles</label>
       </Link>
-    </div>
+    </article>
   );
 };
 
