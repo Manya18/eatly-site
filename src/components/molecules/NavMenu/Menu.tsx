@@ -3,7 +3,7 @@ import Link from "../../atoms/link/Link";
 import Logo from "../../atoms/logo/Logo";
 import { MenuProps } from "../../../types/MenuProps";
 
-const Menu : React.FC<MenuProps> = ({containerStyle}) => {
+const Menu: React.FC<MenuProps> = ({ containerStyle }) => {
   return (
     <div className={`${styles.container} ${containerStyle}`}>
       <Logo />

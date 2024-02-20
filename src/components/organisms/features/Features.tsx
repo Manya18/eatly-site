@@ -21,11 +21,20 @@ const featuresData = [
 const Features: React.FC = () => {
   return (
     <div className={styles.features}>
-      <Feature title={featuresData[0].title} paragraph={featuresData[0].paragraph} />
+      <Feature
+        title={featuresData[0].title}
+        paragraph={featuresData[0].paragraph}
+      />
       <hr className={styles.coloredHr} />
-      <Feature title={featuresData[1].title} paragraph={featuresData[1].paragraph} />
+      <Feature
+        title={featuresData[1].title}
+        paragraph={featuresData[1].paragraph}
+      />
       <hr className={styles.coloredHr} />
-      <Feature title={featuresData[2].title} paragraph={featuresData[2].paragraph} />
+      <Feature
+        title={featuresData[2].title}
+        paragraph={featuresData[2].paragraph}
+      />
     </div>
   );
 };

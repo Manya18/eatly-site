@@ -18,17 +18,22 @@ import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 const HomePage = () => {
   return (
     <Layout>
+
       <FlexTemplate>
         <HeroInfo />
         <HeroImage />
       </FlexTemplate>
+
       <Features />
+
       <FlexTemplate>
         <AppPreviewImg />
         <AppPreviewInfo />
       </FlexTemplate>
       <HrTypeStyled needMargin={true} />
+      
       <RecipesPage />
+
       <FlexTemplate>
         <PurchasesInfo />
         <PurchasesDashboard />
@@ -41,7 +46,7 @@ const HomePage = () => {
         </TitleTypeSecondary>
         <FeedbackCarusel />
       </ColumnTemplate>
-      
+
       <QuestionsPage />
     </Layout>
   );

@@ -1,7 +1,7 @@
 .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 46px;
-    margin: 75px 0 26px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 46px;
+  margin: 75px 0 26px 0;
 }

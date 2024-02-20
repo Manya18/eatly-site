@@ -1,17 +1,13 @@
 import styles from "./feedbackCard.module.css";
-import { FeedbackProps } from "../../../types/FeedbackProps";
 import quoteImg from "../../../assets/images/molecules/QuoteChar.svg";
+import { ICommentsProps } from "../../../types/APItypes/CommentsProps";
 
-const FeedbackCard = ({
-  personName,
-  quote,
-  id
-}: React.PropsWithChildren<FeedbackProps>) => {
+const FeedbackCard = ({ data }: { data: ICommentsProps }) => {
   return (
-    <section key={id} className={styles.feedbackCard}>
-      {personName && (
+    <section key={data.id} className={styles.feedbackCard}>
+      {data.user && (
         <div className={styles.cardHeader}>
-          <span className={styles.personName}>@{personName}</span>
+          <span className={styles.personName}>@{data.user.username}</span>
           <img
             className={styles.quoteImg}
             src={quoteImg}
@@ -20,7 +16,7 @@ const FeedbackCard = ({
           />
         </div>
       )}
-      <p className={styles.quote}>{quote}</p>
+      <p className={styles.quote}>{data.body}</p>
     </section>
   );
 };

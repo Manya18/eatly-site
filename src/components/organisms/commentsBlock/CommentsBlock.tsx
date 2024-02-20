@@ -1,19 +1,23 @@
-import { CommentsProps } from "../../../types/APItypes/CommentsProps";
+import { useParams } from "react-router-dom";
+import { useGetCommentsByPostIdQuery } from "../../../redux/features/api/fetch.api";
 import FeedbackCard from "../../molecules/feedbackCard/FeedbackCard";
-import styles from "./commentsBlock.module.css"
+import styles from "./commentsBlock.module.css";
 
-const CommentsBlock : React.FC<CommentsProps> = ({comments}) => {
-    console.log(comments)
-    return ( 
-        <div className={styles.commentsBlock}>
-            <span className={styles.title}>Comments</span>
-            {comments.map((comm) => (
-                <div key={comm.id} className={styles.commentsGroup}>
-            <FeedbackCard personName={comm.user.username} quote={comm.body} id={comm.id} />
-            </div>
-            ))}
+const CommentsBlock = () => {
+  const urlParameters = useParams();
+  const id = urlParameters.articleId || "1";
+  const { data } = useGetCommentsByPostIdQuery(id);
+
+  return (
+    <div className={styles.commentsBlock}>
+      <span className={styles.title}>Comments</span>
+      {data?.comments.map((com) => (
+        <div key={com.id} className={styles.commentsGroup}>
+          <FeedbackCard data={com} />
         </div>
-     );
-}
- 
+      ))}
+    </div>
+  );
+};
+
 export default CommentsBlock;

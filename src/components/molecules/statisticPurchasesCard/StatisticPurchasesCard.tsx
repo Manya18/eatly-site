@@ -1,8 +1,6 @@
 import { StaticPurchasesCardProps } from "../../../types/StatisticPurchasesCardProps";
 import styles from "./statisticPurchasesCard.module.css";
 
-
-
 const DashboardBlock = ({ title, changing, price, icon, progressBar } : React.PropsWithChildren<StaticPurchasesCardProps>) => {
   return (
     <section className={styles.card}>

@@ -1,8 +1,8 @@
 .columnTemplate {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: space-between;
-    margin: 100px 96px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  margin: 100px 96px;
+  text-align: center;
 }

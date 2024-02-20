@@ -3,10 +3,10 @@ import { IPostProps } from "../../../types/APItypes/PostProps";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./blogCard.module.css";
 
-const BlogCard = ({ data }: { data: IPostProps }) => {
+const BlogCard = ({ postData }: { postData: IPostProps }) => {
   // обрезаем первые 3 строки
-  const truncateText = () => {
-    const words = data.body.split(" ");
+  const truncateText = (body: string) => {
+    const words = body.split(" ");
     let truncatedText = words[0];
     words.shift();
     let currentLines = 0;
@@ -33,19 +33,23 @@ const BlogCard = ({ data }: { data: IPostProps }) => {
   };
 
   return (
-    <Link to={`../article/${data.id}`} key={data.id.toString()} className={styles.card}>
-      <div className={styles.title}>{data.title}</div>
+    <Link
+      to={`../article/${postData.id}`}
+      key={postData.id.toString()}
+      className={styles.card}
+    >
+      <div className={styles.title}>{postData.title}</div>
       <div className={styles.addons}>
         <div className={styles.tags}>
-          {data.tags.map((tag: string) => (
+          {postData.tags.map((tag: string) => (
             <span key={tag}>{"#" + tag}</span>
           ))}
         </div>
         <span className={styles.reactions}>
-          {data.reactions.toString()} <StyledSpan>&#9733;</StyledSpan>
+          {postData.reactions.toString()} <StyledSpan>&#9733;</StyledSpan>
         </span>
       </div>
-      <p className={styles.body}>{truncateText()}</p>
+      <p className={styles.body}>{truncateText(postData.body)}</p>
     </Link>
   );
 };

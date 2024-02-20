@@ -1,7 +1,12 @@
 import { PurchaseCardProps } from "../../../types/PurchaseCardProps";
 import styles from "./purchaseCard.module.css";
 
-const PurchaseCard= ({ title, imgUrl, status, date } : React.PropsWithChildren<PurchaseCardProps>) => {
+const PurchaseCard = ({
+  title,
+  imgUrl,
+  status,
+  date,
+}: React.PropsWithChildren<PurchaseCardProps>) => {
   return (
     <article className={styles.purchase}>
       <section className={styles.leftPart}>

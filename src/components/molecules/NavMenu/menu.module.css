@@ -4,7 +4,7 @@
 }
 
 .navigation {
-    display: flex;
-    column-gap: 65px;
-    align-items: center;
-  }
+  display: flex;
+  column-gap: 65px;
+  align-items: center;
+}

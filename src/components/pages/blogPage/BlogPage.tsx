@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import Layout from "../../templates/layout/Layout";
 
-import styles from "./blogPage.module.css";
 import BlogCardGroup from "../../organisms/blogCardGroup/BlogCardGroup";
-import ButtonTypeHidden from "../../atoms/buttonTypeHidden/ButtonTypeHidden";
-import AbleArrow from "../../../assets/images/pages/BackArrow.svg";
-import DisableArrow from "../../../assets/images/pages/ForwardArrow.svg";
 import { IPostProps } from "../../../types/APItypes/PostProps";
-
-const POSTS_ON_PAGE = 12;
+import { useGetAllPostsQuery } from "../../../redux/features/api/fetch.api";
+import PaginationButtons from "../../molecules/paginationButtons/PaginationButtons";
+import { RootState } from "../../../redux/store";
+import { useSelector } from "react-redux";
 
 const data: IPostProps[] = [
   {
@@ -25,33 +22,8 @@ const data: IPostProps[] = [
 ];
 
 const BlogPage = () => {
-  const [page, setPage] = useState(0);
-  const [limit, setLimit] = useState(0);
-
-  const [posts, setPosts] = useState<IPostProps[]>(data);
-  const fetchComments = async () => {
-    const responce = await fetch(
-      `https://dummyjson.com/posts?limit=12&skip=${page * POSTS_ON_PAGE}`
-    );
-    const posts = await responce.json();
-    setLimit(posts.total);
-    setPosts(posts.posts);
-  };
-  useEffect(() => {
-    fetchComments();
-  }, []);
-
-  const openBackPage = () => {
-    setPage(page - 1);
-    console.log(page);
-    fetchComments();
-  };
-
-  const openForwardPage = () => {
-    setPage(page + 1);
-    console.log(page);
-    fetchComments();
-  };
+  const page = useSelector((state: RootState) => state.currentPage.page);
+  const { data: postsData } = useGetAllPostsQuery(page);
 
   return (
     <Layout>
@@ -59,38 +31,8 @@ const BlogPage = () => {
         <TitleTypeSecondary>
           Latest <StyledSpan>Articles</StyledSpan>
         </TitleTypeSecondary>
-        <BlogCardGroup data={posts} />
-        <div className={styles.buttonGroup}>
-          {page <= 0 ? (
-            <ButtonTypeHidden onClick={openBackPage} disabled={true}>
-              <img src={DisableArrow} alt="Back Arrow" loading="lazy" />
-            </ButtonTypeHidden>
-          ) : (
-            <ButtonTypeHidden onClick={openBackPage}>
-              <img
-                src={AbleArrow}
-                className={styles.reverseArrow}
-                alt="Back Arrow"
-                loading="lazy"
-              />
-            </ButtonTypeHidden>
-          )}
-
-          {page >= limit / 12 - 1 ? (
-            <ButtonTypeHidden onClick={openForwardPage} disabled={true}>
-              <img
-                src={DisableArrow}
-                className={styles.reverseArrow}
-                alt="Forward Arrow"
-                loading="lazy"
-              />
-            </ButtonTypeHidden>
-          ) : (
-            <ButtonTypeHidden onClick={openForwardPage}>
-              <img src={AbleArrow} alt="Forward Arrow" loading="lazy" />
-            </ButtonTypeHidden>
-          )}
-        </div>
+        <BlogCardGroup data={postsData?.posts || data} />
+        <PaginationButtons limit={postsData?.total || 0} />
       </ColumnTemplate>
     </Layout>
   );

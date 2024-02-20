@@ -1,4 +1,4 @@
-import { TextProps } from "../../../types/TextProps";
+import { TextProps } from "../../../types/ChildrenProps";
 import styles from "./titleTypePrimary.module.css";
 
 const TitleTypePrimary = (props: React.PropsWithChildren<TextProps>) => {

@@ -13,3 +13,7 @@
   border: none;
   padding: 1px 10px;
 }
+
+.buttonTypeOpen:hover {
+  cursor: pointer;
+}
