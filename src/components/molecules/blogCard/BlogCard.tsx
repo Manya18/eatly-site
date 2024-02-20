@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { PostProps } from "../../../types/APItypes/PostProps";
+import { IPostProps } from "../../../types/APItypes/PostProps";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./blogCard.module.css";
 
-const BlogCard = ({ data }: { data: PostProps }) => {
+const BlogCard = ({ data }: { data: IPostProps }) => {
   // обрезаем первые 3 строки
   const truncateText = () => {
     const words = data.body.split(" ");

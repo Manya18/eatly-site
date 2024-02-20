@@ -18,5 +18,5 @@ export interface IRecipesProps {
 }
 
 export type RecipesProps = {
-    recipes: IRecipesProps[]
-}
+  recipes: IRecipesProps[];
+};

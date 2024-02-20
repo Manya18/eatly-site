@@ -1,14 +1,13 @@
-import ButtonTypeSecondary from "../../atoms/buttonTypeSecondary/ButtonTypeSecondary";
 import styles from "./article.module.css";
 import arrow from "../../../assets/images/molecules/arrow-right.svg";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { PostProps } from "../../../types/APItypes/PostProps";
+import { IPostProps } from "../../../types/APItypes/PostProps";
 import { Link } from "react-router-dom";
 
 const Article = () => {
-  const [articleInfo, setArticleInfo] = useState<PostProps>(
+  const [articleInfo, setArticleInfo] = useState<IPostProps>(
     {
       id: 0,
       title: "",
@@ -42,7 +41,7 @@ const Article = () => {
     };
 
     fetchComments();
-  }, []);
+  });
 
   return (
     <div key={articleInfo.id} className={styles.article}>

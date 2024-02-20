@@ -1,9 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
-import postsReducer from "./features/postsSlice"
-
+import { configureStore } from '@reduxjs/toolkit';
+import { fetchApi } from './api/fetch.api';
 
 export const store = configureStore({
-    reducer: {
-        posts: postsReducer
-    },
-})
+  reducer: {
+    [fetchApi.reducerPath]: fetchApi.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({}).concat([fetchApi.middleware]),
+});
+

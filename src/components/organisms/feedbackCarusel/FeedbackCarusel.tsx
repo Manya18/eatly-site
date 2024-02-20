@@ -44,11 +44,13 @@ const FeedbackCarusel = () => {
     <div className={styles.container}>
       <Slider {...settings}>
         {comments.map((com) => (
-          <FeedbackCard
-            id={com.id}
-            personName={com.user.username}
-            quote={com.body}
-          />
+          <div className={styles.cardDiv} key={com.id}>
+            <FeedbackCard
+              id={com.id}
+              personName={com.user.username}
+              quote={com.body}
+            />
+          </div>
         ))}
       </Slider>
     </div>

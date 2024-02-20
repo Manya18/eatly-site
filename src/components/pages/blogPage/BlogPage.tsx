@@ -9,11 +9,11 @@ import BlogCardGroup from "../../organisms/blogCardGroup/BlogCardGroup";
 import ButtonTypeHidden from "../../atoms/buttonTypeHidden/ButtonTypeHidden";
 import AbleArrow from "../../../assets/images/pages/BackArrow.svg";
 import DisableArrow from "../../../assets/images/pages/ForwardArrow.svg";
-import { PostProps } from "../../../types/APItypes/PostProps";
+import { IPostProps } from "../../../types/APItypes/PostProps";
 
 const POSTS_ON_PAGE = 12;
 
-const data: PostProps[] = [
+const data: IPostProps[] = [
   {
     id: 1,
     title: "His mother had always taught him",
@@ -28,7 +28,7 @@ const BlogPage = () => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(0);
 
-  const [posts, setPosts] = useState<PostProps[]>(data);
+  const [posts, setPosts] = useState<IPostProps[]>(data);
   const fetchComments = async () => {
     const responce = await fetch(
       `https://dummyjson.com/posts?limit=12&skip=${page * POSTS_ON_PAGE}`
@@ -39,7 +39,7 @@ const BlogPage = () => {
   };
   useEffect(() => {
     fetchComments();
-  }, []);
+  });
 
   const openBackPage = () => {
     setPage(page - 1);
