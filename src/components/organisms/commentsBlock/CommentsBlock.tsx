@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useGetCommentsByPostIdQuery } from "../../../redux/features/api/fetch.api";
 import FeedbackCard from "../../molecules/feedbackCard/FeedbackCard";
 import ButtonTypePrimary from "../../atoms/buttonTypePrimary/ButtonTypePrimary";
 import InputTypePrimary from "../../atoms/inputTypePrimary/InputTypePrimary";
 import SpanTypeViolet from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./commentsBlock.module.css";
+import { CommentsProps } from "../../../types/APItypes/CommentsProps";
 
-const CommentsBlock = () => {
-  const urlParameters = useParams();
-  const id = urlParameters.articleId || "1";
-  const { data } = useGetCommentsByPostIdQuery(id);
+const CommentsBlock: React.FC<CommentsProps> = (props) => {
   const [commentBody, setCommentBody] = useState("");
-  const [commentsArray, setCommentsArray] = useState(data?.comments || []);
+  const [commentsArray, setCommentsArray] = useState(props?.comments || []);
   // const [data, setData] = useState<CommentsProps>();
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState<any>();
@@ -33,10 +29,10 @@ const CommentsBlock = () => {
   // }, []);
 
   useEffect(() => {
-    if (data?.comments) {
-      setCommentsArray(data.comments);
+    if (props?.comments) {
+      setCommentsArray(props.comments);
     }
-  }, [data?.comments]);
+  }, [props?.comments]);
 
   const addComment = async () => {
     const response = await fetch("https://dummyjson.com/comments/add", {
@@ -44,7 +40,7 @@ const CommentsBlock = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         body: commentBody,
-        postId: id,
+        postId: props.comments[0].postId,
         userId: 5,
       }),
     });

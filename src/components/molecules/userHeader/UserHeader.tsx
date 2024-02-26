@@ -10,7 +10,6 @@ const UserHeader = ({ id }: { id: string }) => {
         className={styles.authorImg}
         src={authorInfo?.image}
         alt="avatar"
-        loading="lazy"
         width="55px"
       />
       <div className={styles.textGroup}>

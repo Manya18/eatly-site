@@ -11,3 +11,8 @@
 .commentsGroup {
   margin-top: 90px;
 }
+
+.buttonStyle {
+  min-width: 500px;
+  text-align: center;
+}

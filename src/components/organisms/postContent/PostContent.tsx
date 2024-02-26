@@ -4,10 +4,10 @@ import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import { useGetSinglePostQuery } from "../../../redux/features/api/fetch.api";
 import UserHeader from "../../molecules/userHeader/UserHeader";
 import TagsGroup from "../../molecules/tagsGroup/TagsGroup";
-import styles from "./post.module.css";
+import styles from "./postContent.module.css";
 
 
-const Post = () => {
+const PostContent = () => {
   const urlParameters = useParams();
   const id = urlParameters.articleId || "1";
   const { data: articleInfo } = useGetSinglePostQuery(id);
@@ -33,4 +33,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostContent;

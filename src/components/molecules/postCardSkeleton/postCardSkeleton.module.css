@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.avatar {
+    display: flex;
+    column-gap: 20px;
+}
