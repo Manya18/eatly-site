@@ -10,7 +10,7 @@ const Menu: React.FC<MenuProps> = ({ containerStyle }) => {
       <nav className={styles.navigation}>
         <Link href="/#recipes">Recipes</Link>
         <Link href="/#FAQ">FAQ</Link>
-        <Link href="/blog">Blog</Link>
+        <Link href="/blog#">Blog</Link>
       </nav>
     </div>
   );

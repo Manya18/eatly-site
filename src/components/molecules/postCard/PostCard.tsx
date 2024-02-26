@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { IPostProps } from "../../../types/APItypes/PostProps";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import UserHeader from "../userHeader/UserHeader";
 import TagsGroup from "../tagsGroup/TagsGroup";
 import { useDispatch } from "react-redux";
 import styles from "./postCard.module.css";
+import { HashLink } from "react-router-hash-link";
 
 const PostCard = ({ postData }: { postData: IPostProps }) => {
 
@@ -20,8 +20,8 @@ const PostCard = ({ postData }: { postData: IPostProps }) => {
   // }
 
   return (
-    <Link
-      to={`../article/${postData.id}`}
+    <HashLink
+      to={`../article/${postData.id}#`}
       key={postData.id.toString()}
       className={styles.card}
       // onClick={putPostData()}
@@ -37,7 +37,7 @@ const PostCard = ({ postData }: { postData: IPostProps }) => {
         <TagsGroup props={postData.tags} />
       </div>
       <p className={styles.body}>{text}</p>
-    </Link>
+    </HashLink>
   );
 };
 

@@ -9,6 +9,13 @@
   padding: 26px 20px;
   text-align: left;
   text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(105%);
+  transition: transform 0.3s;
 }
 
 .title {
