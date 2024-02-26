@@ -1,44 +1,27 @@
+import { useParams, Link } from "react-router-dom";
 import arrow from "../../../assets/images/molecules/arrow-right.svg";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useGetAuthorQuery, useGetSinglePostQuery } from "../../../redux/features/api/fetch.api";
+import { useGetSinglePostQuery } from "../../../redux/features/api/fetch.api";
+import UserHeader from "../../molecules/userHeader/UserHeader";
+import TagsGroup from "../../molecules/tagsGroup/TagsGroup";
 import styles from "./post.module.css";
 
-const Article = () => {
+
+const Post = () => {
   const urlParameters = useParams();
   const id = urlParameters.articleId || "1";
   const { data: articleInfo } = useGetSinglePostQuery(id);
-  const { data: authorInfo } = useGetAuthorQuery(id);
 
   return (
     <article key={articleInfo?.id} className={styles.article}>
       <div className={styles.title}>{articleInfo?.title}</div>
       <div className={styles.infoGroup}>
-        <div className={styles.authorCard}>
-          <img
-            className={styles.authorImg}
-            src={authorInfo?.image}
-            alt="avatar"
-            loading="lazy"
-            width="55px"
-          />
-          <div className={styles.textGroup}>
-            <div className={styles.writtenBy}>Written By</div>
-            <div className={styles.authorName}>
-              {authorInfo?.firstName + " " + authorInfo?.lastName}
-            </div>
-          </div>
-        </div>
+        <UserHeader id={id} />
         <div className={styles.addons}>
           <div className={styles.reactions}>
             {articleInfo?.reactions} <StyledSpan>&#9733;</StyledSpan>
           </div>
-          <div className={styles.tags}>
-            {articleInfo?.tags.map((tag: string) => (
-              <span key={tag}>{"#" + tag} </span>
-            ))}
-          </div>
+          <TagsGroup props={articleInfo?.tags || []} />
         </div>
       </div>
       <div className={styles.body}>{articleInfo?.body}</div>
@@ -50,4 +33,4 @@ const Article = () => {
   );
 };
 
-export default Article;
+export default Post;

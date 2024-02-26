@@ -3,7 +3,7 @@ import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import Post from "../../organisms/post/Post";
 import CommentsBlock from "../../organisms/commentsBlock/CommentsBlock";
 
-const ArticlePage = () => {
+const PostPage = () => {
   return (
     <Layout>
       <ColumnTemplate>
@@ -14,4 +14,4 @@ const ArticlePage = () => {
   );
 };
 
-export default ArticlePage;
+export default PostPage;

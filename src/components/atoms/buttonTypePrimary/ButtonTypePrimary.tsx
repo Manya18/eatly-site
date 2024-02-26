@@ -3,7 +3,7 @@ import { ButtonProps } from "../../../types/ButtonProps";
 
 const ButtonTypePrimary = (props: React.PropsWithChildren<ButtonProps>) => {
   return (
-    <button className={styles.primaryButton} onClick={props.onClick}>
+    <button className={`${styles.primaryButton} ${props.style}`} onClick={props.onClick}>
       {props.children}
     </button>
   );

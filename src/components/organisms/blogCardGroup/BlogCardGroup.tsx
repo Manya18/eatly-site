@@ -6,7 +6,9 @@ const BlogCardGroup = ({ data }: { data: IPostProps[] }) => {
   return (
     <div className={styles.container}>
       {data.map((post) => (
-        <BlogCard postData={post} />
+        <div key={post.id}>
+          <BlogCard postData={post} />
+        </div>
       ))}
     </div>
   );

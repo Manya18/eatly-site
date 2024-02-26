@@ -18,18 +18,15 @@
   line-height: 25px;
 }
 
+.headerTagsGroup{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
 .addons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.tags {
-  display: flex;
-  justify-content: flex-start;
-  column-gap: 5px;
-  font-size: 12;
-  color: #8d8d8d;
 }
 
 .reactions {

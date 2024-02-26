@@ -17,27 +17,6 @@
   align-items: center;
 }
 
-.authorCard {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-}
-
-.authorImg {
-  border-radius: 50%;
-}
-
-.writtenBy {
-  font-size: 15px;
-  color: #8d8d8d;
-}
-
-.authorName {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 26px;
-}
-
 .addons {
   text-align: right;
 }
