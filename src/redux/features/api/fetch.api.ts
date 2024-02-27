@@ -40,6 +40,13 @@ const fetchApi = createApi({
         url: `comments/post/${id}`,
       }),
     }),
+    addComment: build.mutation({
+      query: (commentBody) => ({
+        url: "comments/add",
+        method: "POST",
+        body: commentBody,
+      }),
+    }),
   }),
 });
 
@@ -50,6 +57,7 @@ export const {
   useGetAuthorQuery,
   useGetSomeCommentsQuery,
   useGetCommentsByPostIdQuery,
+  useAddCommentMutation,
 } = fetchApi;
 
 export default fetchApi;

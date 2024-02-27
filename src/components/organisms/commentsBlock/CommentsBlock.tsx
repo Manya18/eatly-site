@@ -1,51 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FeedbackCard from "../../molecules/feedbackCard/FeedbackCard";
 import ButtonTypePrimary from "../../atoms/buttonTypePrimary/ButtonTypePrimary";
 import InputTypePrimary from "../../atoms/inputTypePrimary/InputTypePrimary";
 import SpanTypeViolet from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./commentsBlock.module.css";
 import { CommentsProps } from "../../../types/APItypes/CommentsProps";
+import { useAddCommentMutation } from "../../../redux/features/api/fetch.api";
 
 const CommentsBlock: React.FC<CommentsProps> = (props) => {
   const [commentBody, setCommentBody] = useState("");
   const [commentsArray, setCommentsArray] = useState(props?.comments || []);
-  // const [data, setData] = useState<CommentsProps>();
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState<any>();
-  // const getCommentData = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const responce = await fetch(`https://dummyjson.com/comments/post/${id}`);
-  //     const comments = await responce.json();
-  //     setData(comments);
-  //     console.log("fetchComments", comments);
-  //   } catch (error) {
-  //     setError(error);
-  //   }
-  //   setLoading(false);
-  // };
-  // useEffect(() => {
-  //   getCommentData();
-  // }, []);
-
-  useEffect(() => {
-    if (props?.comments) {
-      setCommentsArray(props.comments);
-    }
-  }, [props?.comments]);
+  const [addPost] = useAddCommentMutation();
 
   const addComment = async () => {
-    const response = await fetch("https://dummyjson.com/comments/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        body: commentBody,
-        postId: props.comments[0].postId,
-        userId: 5,
-      }),
-    });
-    const json = await response.json();
-    setCommentsArray((commentsArray) => [...commentsArray, json]);
+    const a = await addPost({
+      body: commentBody,
+      postId: props.comments[0].postId,
+      userId: 5,
+    }).unwrap()
+    setCommentsArray((commentsArray) => [...commentsArray, a]);
     setCommentBody("");
   };
 

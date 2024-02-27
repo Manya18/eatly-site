@@ -25,7 +25,7 @@ const PostCard = ({ postData }: { postData: IPostProps }) => {
 
   return (
     <HashLink
-      to={`../article/${postData.id}#`}
+      to={`../post/${postData.id}#`}
       key={postData.id.toString()}
       className={styles.card}
       onClick={() => dispatchPost()}
