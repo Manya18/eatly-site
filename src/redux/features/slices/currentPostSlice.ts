@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IPostProps } from "../../../types/APItypes/PostProps";
+import { SinglePostProps } from "../../../types/APItypes/PostProps";
 
 const currentPostSlice = createSlice({
   name: "currentPost",
   initialState: {
-    post: {} as IPostProps,
+    post: {} as SinglePostProps,
   },
   reducers: {
     setPost: (state, action) => {

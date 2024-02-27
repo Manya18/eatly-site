@@ -1,3 +1,6 @@
+import { AuthorProps } from "./AuthorProps";
+import { CommentsProps } from "./CommentsProps";
+
 export interface IPostProps {
   id: number;
   title: string;
@@ -12,4 +15,9 @@ export interface PostProps {
   skip: number;
   limit: number;
   posts: IPostProps[];
+}
+
+export interface SinglePostProps {
+  postContent: IPostProps;
+  author: AuthorProps;
 }

@@ -2,23 +2,29 @@ import Layout from "../../templates/layout/Layout";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import PostContent from "../../organisms/postContent/PostContent";
 import CommentsBlock from "../../organisms/commentsBlock/CommentsBlock";
-import { useParams } from "react-router-dom";
 import { useGetCommentsByPostIdQuery } from "../../../redux/features/api/fetch.api";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
+import { Skeleton } from "@mui/material";
 
 const PostPage = () => {
-  const urlParameters = useParams();
-  const id = urlParameters.articleId || "1";
-  const { data } = useGetCommentsByPostIdQuery(id);
-  const post = useSelector((state: RootState) => state.currentPost);
-
+  // получаем данные поста из хранилища
+  const currentPostString = sessionStorage.getItem("currentPostData");
+  let currentPost = null;
+  if (currentPostString !== null) {
+    currentPost = JSON.parse(currentPostString);
+  }
+  const { data: commentsData, isLoading } = useGetCommentsByPostIdQuery(
+    currentPost.postContent.id
+  );
 
   return (
     <Layout>
       <ColumnTemplate>
-        <PostContent />
-        <CommentsBlock comments={data?.comments || []}/>
+        <PostContent props={currentPost} />
+        {isLoading ? (
+          <Skeleton variant="rounded" height={170} />
+        ) : (
+          <CommentsBlock comments={commentsData?.comments || []} />
+        )}
       </ColumnTemplate>
     </Layout>
   );

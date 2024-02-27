@@ -1,21 +1,19 @@
-import { useGetAuthorQuery } from "../../../redux/features/api/fetch.api";
+import { AuthorProps } from "../../../types/APItypes/AuthorProps";
 import styles from "./userHeader.module.css";
 
-const UserHeader = ({ id }: { id: string }) => {
-  const { data: authorInfo } = useGetAuthorQuery(id);
-
+const UserHeader = ({ author }: { author: AuthorProps }) => {
   return (
     <div className={styles.authorCard}>
       <img
         className={styles.authorImg}
-        src={authorInfo?.image}
+        src={author.image}
         alt="avatar"
         width="55px"
       />
       <div className={styles.textGroup}>
         <div className={styles.writtenBy}>Written By</div>
         <div className={styles.authorName}>
-          {authorInfo?.firstName + " " + authorInfo?.lastName}
+          {author.firstName + " " + author.lastName}
         </div>
       </div>
     </div>

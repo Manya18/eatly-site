@@ -1,30 +1,28 @@
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import arrow from "../../../assets/images/molecules/arrow-right.svg";
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
-import { useGetSinglePostQuery } from "../../../redux/features/api/fetch.api";
 import UserHeader from "../../molecules/userHeader/UserHeader";
 import TagsGroup from "../../molecules/tagsGroup/TagsGroup";
 import styles from "./postContent.module.css";
+import { SinglePostProps } from "../../../types/APItypes/PostProps";
 
-
-const PostContent = () => {
-  const urlParameters = useParams();
-  const id = urlParameters.articleId || "1";
-  const { data: articleInfo } = useGetSinglePostQuery(id);
+const PostContent = ({ props }: { props: SinglePostProps }) => {
+  const postContent = props.postContent;
+  const author = props.author;
 
   return (
-    <article key={articleInfo?.id} className={styles.article}>
-      <div className={styles.title}>{articleInfo?.title}</div>
+    <article key={postContent.id} className={styles.article}>
+      <div className={styles.title}>{postContent.title}</div>
       <div className={styles.infoGroup}>
-        <UserHeader id={id} />
+        <UserHeader author={author} />
         <div className={styles.addons}>
           <div className={styles.reactions}>
-            {articleInfo?.reactions} <StyledSpan>&#9733;</StyledSpan>
+            {postContent.reactions} <StyledSpan>&#9733;</StyledSpan>
           </div>
-          <TagsGroup props={articleInfo?.tags || []} />
+          <TagsGroup props={postContent.tags || []} />
         </div>
       </div>
-      <div className={styles.body}>{articleInfo?.body}</div>
+      <div className={styles.body}>{postContent.body}</div>
       <Link to="/blog" className={styles.backLink}>
         <img src={arrow} alt="back" />
         <label>All Articles</label>

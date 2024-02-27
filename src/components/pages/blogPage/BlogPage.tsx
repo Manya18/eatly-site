@@ -25,7 +25,6 @@ const BlogPage = () => {
         ) : (
           <PostsGrid data={postsData?.posts || []} />
         )}
-
         <PaginationButtons limit={postsData?.total || 0} />
       </ColumnTemplate>
     </Layout>
