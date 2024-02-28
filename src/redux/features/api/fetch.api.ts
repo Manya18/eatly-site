@@ -54,6 +54,7 @@ export const {
   useGetRecipesQuery,
   useGetAllPostsQuery,
   useGetSinglePostQuery,
+  useLazyGetSinglePostQuery,
   useGetAuthorQuery,
   useGetSomeCommentsQuery,
   useGetCommentsByPostIdQuery,

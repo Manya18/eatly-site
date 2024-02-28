@@ -1,5 +1,4 @@
 import { AuthorProps } from "./AuthorProps";
-import { CommentsProps } from "./CommentsProps";
 
 export interface IPostProps {
   id: number;

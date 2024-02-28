@@ -11,13 +11,9 @@ const FAQCard = ( {question, answer} : React.PropsWithChildren<FAQProps>) => {
     <section className={styles.details}>
       <div className={styles.summary}>
         <p className={styles.question}>{question}</p>
-        {isOpen ? (
-          <ButtonTypeOpen onClick={() => {setIsOpen(!isOpen);}}>-</ButtonTypeOpen>
-        ) : (
-          <ButtonTypeOpen onClick={() => {setIsOpen(!isOpen);}}>+</ButtonTypeOpen>
-        )}
+        <ButtonTypeOpen onClick={() => {setIsOpen(!isOpen);}}>{isOpen ? ("-") : ("+")}</ButtonTypeOpen>        
       </div>
-      {isOpen && <p className={styles.answer}>{answer}</p>}
+      {isOpen && <p className={`${styles.answer} ${isOpen && styles.open}`}>{answer}</p>}
       <HrTypeStyled />
     </section>
   );
