@@ -1,13 +1,16 @@
 import FeedbackCard from "../../molecules/feedbackCard/FeedbackCard";
 import styles from "./feedbackCarusel.module.css";
+import { Skeleton } from "@mui/material";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useGetSomeCommentsQuery } from "../../../redux/features/api/fetch.api";
+import GetAllComments from "../../../services/getAllComments";
 
 const FeedbackCarusel = () => {
-  const { data } = useGetSomeCommentsQuery(6);
+  // const { data } = useGetSomeCommentsQuery(6);
+  const { allComments, loading, error } = GetAllComments(6);
+  //TODO: add error
 
   const settings = {
     dots: true,
@@ -20,9 +23,15 @@ const FeedbackCarusel = () => {
   return (
     <div className={styles.container}>
       <Slider {...settings}>
-        {data?.comments.map((com) => (
+        {allComments?.comments.map((com) => (
           <div className={styles.cardDiv} key={com.id}>
-            <FeedbackCard data={com} />
+            {loading ? (
+              <Skeleton variant="rounded">
+                <FeedbackCard data={com} />
+              </Skeleton>
+            ) : (
+              <FeedbackCard data={com} />
+            )}
           </div>
         ))}
       </Slider>

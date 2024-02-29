@@ -11,7 +11,7 @@ const PostContent = ({ props }: { props: SinglePostProps }) => {
   const author = props.author;
 
   return (
-    <article key={postContent.id} className={styles.article}>
+    <article key={props.postContent.id} className={styles.article}>
       <div className={styles.title}>{postContent.title}</div>
       <div className={styles.infoGroup}>
         <UserHeader author={author} />

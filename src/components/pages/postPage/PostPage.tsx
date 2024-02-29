@@ -5,39 +5,39 @@ import Layout from "../../templates/layout/Layout";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import PostContent from "../../organisms/postContent/PostContent";
 import CommentsBlock from "../../organisms/commentsBlock/CommentsBlock";
-import { useGetCommentsByPostIdQuery } from "../../../redux/features/api/fetch.api";
+import GetSinglePost from "../../../services/getPost";
 
 const PostPage = () => {
   const urlParam = useParams();
   const id = urlParam.postId || "1";
+  const {post, loading, error} = GetSinglePost(id)
+  // const postEx = useSelector((state: RootState) => state.currentPost.post);
+  // console.log(postEx)
 
+  //TODO: add error
   // получаем данные поста из хранилища
-  const currentPostString = sessionStorage.getItem("currentPostData");
-  let currentPost = null;
-  if (currentPostString !== null) {
-    currentPost = JSON.parse(currentPostString);
+  // const currentPostString = sessionStorage.getItem("currentPostData");
+  // let currentPost = null;
+  // if (currentPostString !== null) {
+  //   currentPost = JSON.parse(currentPostString);
 
-    // проверка на совпадение id
-    if (
-      currentPost !== undefined &&
-      id !== currentPost.postContent.id.toString()
-    ) {
-      console.log("id is wrong!");
-    }
-  }
-
-  const { data: commentsData, isLoading } = useGetCommentsByPostIdQuery(
-    currentPost?.postContent.id.toString() || "1"
-  );
+  //   // проверка на совпадение id
+  //   if (
+  //     currentPost !== undefined &&
+  //     id !== currentPost.postContent.id.toString()
+  //   ) {
+  //     console.log("id is wrong!");
+  //   }
+  // }
 
   return (
     <Layout>
       <ColumnTemplate>
-        <PostContent props={currentPost!} />
-        {isLoading ? (
+        {post && <PostContent props={post} />}
+        {loading ? (
           <Skeleton variant="rounded" height={170} />
         ) : (
-          <CommentsBlock comments={commentsData?.comments || []} />
+          <CommentsBlock comments={post?.comments.comments!} />
         )}
       </ColumnTemplate>
     </Layout>
