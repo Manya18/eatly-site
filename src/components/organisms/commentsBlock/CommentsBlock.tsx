@@ -32,7 +32,7 @@ const CommentsBlock: React.FC<CommentsProps> = (props) => {
   };
 
   if (error) {
-    return <APIError/>;
+    return <APIError />;
   }
 
   return (

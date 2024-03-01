@@ -1,6 +1,7 @@
 import { ButtonProps } from "../../../types/ButtonProps";
 import styles from "./buttonTypeHidden.module.css";
 
+//паттерн композиция компонентов
 const ButtonTypeHidden = (props: React.PropsWithChildren<ButtonProps>) => {
   return (
     <button

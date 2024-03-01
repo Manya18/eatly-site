@@ -11,6 +11,7 @@ import APIError from "../../atoms/APIError/APIError";
 const PostPage = () => {
   const urlParam = useParams();
   const id = urlParam.postId || "1";
+  // паттерн Lifting State Up
   const {post, loading, error} = GetSinglePost(id)
 
   if (error) {

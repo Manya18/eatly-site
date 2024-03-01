@@ -9,6 +9,7 @@ import GetAllPosts from "../../../services/getAllPosts";
 import APIError from "../../atoms/APIError/APIError";
 
 const BlogPage = () => {
+  // паттерн Lifting State Up
   const {allPosts, loading, error} = GetAllPosts();
 
   if (error) {
