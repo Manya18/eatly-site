@@ -1,5 +1,5 @@
 import { StaticPurchasesCardProps } from "../../../types/StatisticPurchasesCardProps";
-import styles from "./statisticPurchasesCard.module.css";
+import styles from "./dashboardBlock.module.css";
 
 const DashboardBlock = ({ title, changing, price, icon, progressBar } : React.PropsWithChildren<StaticPurchasesCardProps>) => {
   return (

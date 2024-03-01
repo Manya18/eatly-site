@@ -1,5 +1,5 @@
 import styles from "./purchasesDashboard.module.css";
-import StatisticPurchasesCard from "../../molecules/statisticPurchasesCard/StatisticPurchasesCard";
+import StatisticPurchasesCard from "../../molecules/dashboardBlock/DashboardBlock";
 
 import violetDivider from "../../../assets/images/organisms/violetDivider.svg";
 import orangeDivider from "../../../assets/images/organisms/orangeDivider.svg";
