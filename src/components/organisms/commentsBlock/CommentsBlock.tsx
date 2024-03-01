@@ -5,30 +5,35 @@ import InputTypePrimary from "../../atoms/inputTypePrimary/InputTypePrimary";
 import SpanTypeViolet from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./commentsBlock.module.css";
 import { CommentsProps } from "../../../types/APItypes/CommentsProps";
+import { addComment } from "../../../services/addComment";
+import APIError from "../../atoms/APIError/APIError";
 
 const CommentsBlock: React.FC<CommentsProps> = (props) => {
   const [commentBody, setCommentBody] = useState("");
   const [commentsArray, setCommentsArray] = useState(props?.comments || []);
   const [error, setError] = useState<any>(null);
+  const [isBodyEmpty, setIsBodyEmpty] = useState(false);
 
-  const addComment = async () => {
+  const handleAdd = async () => {
     try {
-      const response = await fetch("https://dummyjson.com/comments/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          body: commentBody,
-          postId: props.comments[0].postId,
-          userId: 5,
-        }),
-      });
-      const res = await response.json();
-      setCommentsArray((commentsArray) => [...commentsArray, res]);
+      if (commentBody.trim() === "") {
+        setIsBodyEmpty(true);
+        return;
+      } else {
+        setIsBodyEmpty(false);
+        const postId = props.comments[0].postId;
+        const newComment = await addComment(commentBody, postId, 5);
+        setCommentsArray((commentsArray) => [...commentsArray, newComment]);
+        setCommentBody("");
+      }
     } catch (error) {
       setError(error);
     }
-    setCommentBody("");
   };
+
+  if (error) {
+    return <APIError/>;
+  }
 
   return (
     <div className={styles.commentsBlock}>
@@ -52,9 +57,12 @@ const CommentsBlock: React.FC<CommentsProps> = (props) => {
           }}
           value={commentBody}
         />
+        {isBodyEmpty && (
+          <span className={styles.bodyEmpty}>Please, fill in the field.</span>
+        )}
         <ButtonTypePrimary
           onClick={() => {
-            addComment();
+            handleAdd();
           }}
           style={styles.buttonStyle}
         >

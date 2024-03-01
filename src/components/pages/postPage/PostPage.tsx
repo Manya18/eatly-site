@@ -6,29 +6,16 @@ import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import PostContent from "../../organisms/postContent/PostContent";
 import CommentsBlock from "../../organisms/commentsBlock/CommentsBlock";
 import GetSinglePost from "../../../services/getPost";
+import APIError from "../../atoms/APIError/APIError";
 
 const PostPage = () => {
   const urlParam = useParams();
   const id = urlParam.postId || "1";
   const {post, loading, error} = GetSinglePost(id)
-  // const postEx = useSelector((state: RootState) => state.currentPost.post);
-  // console.log(postEx)
 
-  //TODO: add error
-  // получаем данные поста из хранилища
-  // const currentPostString = sessionStorage.getItem("currentPostData");
-  // let currentPost = null;
-  // if (currentPostString !== null) {
-  //   currentPost = JSON.parse(currentPostString);
-
-  //   // проверка на совпадение id
-  //   if (
-  //     currentPost !== undefined &&
-  //     id !== currentPost.postContent.id.toString()
-  //   ) {
-  //     console.log("id is wrong!");
-  //   }
-  // }
+  if (error) {
+    return <APIError/>;
+  }
 
   return (
     <Layout>

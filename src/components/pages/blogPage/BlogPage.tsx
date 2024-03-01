@@ -6,12 +6,14 @@ import PostsGrid from "../../organisms/postsGrid/PostsGrid";
 import PaginationButtons from "../../molecules/paginationButtons/PaginationButtons";
 import PostsGridSkeleton from "../../organisms/postsGridSkeleton/PostsGridSkeleton";
 import GetAllPosts from "../../../services/getAllPosts";
+import APIError from "../../atoms/APIError/APIError";
 
 const BlogPage = () => {
   const {allPosts, loading, error} = GetAllPosts();
 
-  if(error) return <div>Oops, something going wrong</div>
-
+  if (error) {
+    return <APIError/>;
+  }
   return (
     <Layout>
       <ColumnTemplate>

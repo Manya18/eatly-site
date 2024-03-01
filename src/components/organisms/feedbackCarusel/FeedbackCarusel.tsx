@@ -6,10 +6,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GetAllComments from "../../../services/getAllComments";
+import APIError from "../../atoms/APIError/APIError";
 
 const FeedbackCarusel = () => {
   const { allComments, loading, error } = GetAllComments(6);
-  //TODO: add error
+
+  if (error) {
+    return <APIError/>;
+  }
 
   const settings = {
     dots: true,

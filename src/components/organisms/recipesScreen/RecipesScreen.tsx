@@ -6,12 +6,12 @@ import HrTypeStyled from "../../atoms/hrTypeStyled/HrTypeStyled";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
 import GetRecipes from "../../../services/getRecipes";
 import { Skeleton } from "@mui/material";
+import APIError from "../../atoms/APIError/APIError";
 
 const RecipesPage = () => {
   const { recipes, loading, error } = GetRecipes();
   if (error) {
-    console.log(error);
-    window.location.href = "/";
+    return <APIError/>;
   }
 
   return (
