@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import GetAllComments from "../../../services/getAllComments";
 
 const FeedbackCarusel = () => {
-  // const { data } = useGetSomeCommentsQuery(6);
   const { allComments, loading, error } = GetAllComments(6);
   //TODO: add error
 

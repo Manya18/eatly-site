@@ -16,7 +16,6 @@ const PaginationButtons: React.FC<LimitProps> = ({ limit }) => {
   const dispatch = useDispatch();
   const openPage = (newPage: number) => {
     dispatch(setPage(newPage));
-    console.log(page);
   };
 
   return (

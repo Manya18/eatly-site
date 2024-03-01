@@ -5,20 +5,28 @@ import InputTypePrimary from "../../atoms/inputTypePrimary/InputTypePrimary";
 import SpanTypeViolet from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import styles from "./commentsBlock.module.css";
 import { CommentsProps } from "../../../types/APItypes/CommentsProps";
-import { useAddCommentMutation } from "../../../redux/features/api/fetch.api";
 
 const CommentsBlock: React.FC<CommentsProps> = (props) => {
   const [commentBody, setCommentBody] = useState("");
   const [commentsArray, setCommentsArray] = useState(props?.comments || []);
-  const [addPost] = useAddCommentMutation();
+  const [error, setError] = useState<any>(null);
 
   const addComment = async () => {
-    const a = await addPost({
-      body: commentBody,
-      postId: props.comments[0].postId,
-      userId: 5,
-    }).unwrap()
-    setCommentsArray((commentsArray) => [...commentsArray, a]);
+    try {
+      const response = await fetch("https://dummyjson.com/comments/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          body: commentBody,
+          postId: props.comments[0].postId,
+          userId: 5,
+        }),
+      });
+      const res = await response.json();
+      setCommentsArray((commentsArray) => [...commentsArray, res]);
+    } catch (error) {
+      setError(error);
+    }
     setCommentBody("");
   };
 

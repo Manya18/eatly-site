@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { RecipesProps, IRecipesProps } from "../types/APItypes/RecipesProps";
 
+export const takeThreeTopLunches = (lanches: RecipesProps) => {
+  const recipes = [...lanches.recipes];
+  let threeTopLunches = [];
+  recipes.sort((a: IRecipesProps, b: IRecipesProps) => b.rating - a.rating);
+
+  threeTopLunches = recipes.slice(0, 3);
+
+  return threeTopLunches;
+};
+
 const GetRecipes = () => {
   const [recipes, setRecipes] = useState<IRecipesProps[]>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
-
-  const takeThreeTopLunches = (lanches: RecipesProps) => {
-    const recipes = [...lanches.recipes];
-    let threeTopLunches = [];
-    recipes.sort((a: IRecipesProps, b: IRecipesProps) => b.rating - a.rating);
-
-    threeTopLunches = recipes.slice(0, 3);
-
-    return threeTopLunches;
-  };
 
   useEffect(() => {
     const getData = async () => {

@@ -1,7 +1,3 @@
-import { RootState } from "../../../redux/store";
-import { useSelector } from "react-redux";
-import { useGetAllPostsQuery } from "../../../redux/features/api/fetch.api";
-
 import StyledSpan from "../../atoms/spanTypeViolet/SpanTypeViolet";
 import TitleTypeSecondary from "../../atoms/titleTypeSecondary/TitleTypeSecondary";
 import ColumnTemplate from "../../templates/columnTemplate/ColumnTemplate";
@@ -12,8 +8,6 @@ import PostsGridSkeleton from "../../organisms/postsGridSkeleton/PostsGridSkelet
 import GetAllPosts from "../../../services/getAllPosts";
 
 const BlogPage = () => {
-  // const page = useSelector((state: RootState) => state.currentPage.page);
-  // const { data: postsData, isLoading } = useGetAllPostsQuery(page);
   const {allPosts, loading, error} = GetAllPosts();
 
   if(error) return <div>Oops, something going wrong</div>
